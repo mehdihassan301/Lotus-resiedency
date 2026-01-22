@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
             &copy; {currentYear} BeachViewStays. All rights reserved.
           </p>
           <div className="flex gap-4">
-             {/* Social placeholders if needed, kept minimal as per requirements */}
+             
           </div>
         </div>
       </div>
