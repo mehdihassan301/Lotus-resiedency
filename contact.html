@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="Secure, hygienic, premium living. Book via WhatsApp today." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-contact.jpg" />
 
-    <!-- Schema.org JSON-LD -->
+        <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -58,6 +58,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: ['class', '[data-theme="dark"]'],
         theme: {
           extend: {
             colors: {
@@ -73,7 +74,8 @@
               }
             },
             fontFamily: {
-              sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+              sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+              serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
             }
           }
         }
@@ -103,6 +105,9 @@
       body { transition: color 0.3s, background-color 0.3s; }
       *, *::before, *::after { border-color: rgb(var(--border)); }
       html { scroll-behavior: smooth; }
+      
+      .logo-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+      .logo-accent { font-family: 'Georgia', serif; font-style: italic; font-weight: 400; color: rgb(var(--accent)); }
       
       .fade-in-section {
         opacity: 0;
@@ -139,23 +144,25 @@
     <!-- Header -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-        <a href="/" class="text-xl md:text-2xl font-bold tracking-tight text-brand-text group">
-          BeachView<span class="text-brand-accent">Stays</span><span class="text-brand-muted">.pk</span>
+         <!-- Premium Logo -->
+         <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
+            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+            <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
         </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center gap-6">
-          <a href="/" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Home</a>
-          <a href="/about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
-          <a href="/gallery.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Gallery</a>
-          <a href="/facilities.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Facilities</a>
-          <a href="/contact" class="text-sm font-medium text-brand-accent transition-colors" aria-current="page">Contact</a>
+          <a href="index.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Home</a>
+          <a href="about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
+          <a href="gallery.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Gallery</a>
+          <a href="facilities.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Facilities</a>
+          <a href="contact.html" class="text-sm font-semibold text-brand-accent transition-colors" aria-current="page">Contact</a>
           
           <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme">
             <!-- Icons injected by JS -->
           </button>
 
-          <a href="/contact" class="px-5 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded hover:opacity-90 transition-all shadow-[0_0_15px_rgba(var(--accent)/0.3)]">
+          <a href="contact.html" class="px-5 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded hover:opacity-90 transition-all shadow-[0_0_15px_rgba(var(--accent)/0.3)]">
             Check Availability
           </a>
         </nav>
@@ -175,12 +182,12 @@
       <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
         <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="mobile-menu-overlay"></div>
         <div class="absolute top-[60px] right-0 w-64 h-[calc(100vh-60px)] bg-brand-surface border-l border-brand-border flex flex-col p-6 space-y-6 shadow-2xl transition-colors duration-300">
-          <a href="/" class="text-lg font-medium text-brand-text hover:text-brand-accent">Home</a>
-          <a href="/about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
-          <a href="/gallery.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Gallery</a>
-          <a href="/facilities.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Facilities</a>
-          <a href="/contact" class="text-lg font-medium text-brand-accent">Contact</a>
-          <a href="/contact" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
+          <a href="index.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Home</a>
+          <a href="about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
+          <a href="gallery.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Gallery</a>
+          <a href="facilities.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Facilities</a>
+          <a href="contact.html" class="text-lg font-bold text-brand-accent">Contact</a>
+          <a href="contact.html" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
         </div>
       </div>
     </header>
