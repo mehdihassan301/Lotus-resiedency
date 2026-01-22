@@ -132,55 +132,54 @@
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
 
-    <!-- Header -->
+    <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-        <a href="/" class="text-xl md:text-2xl font-bold tracking-tight text-brand-text group">
-          BeachView<span class="text-brand-accent">Stays</span><span class="text-brand-muted">.pk</span>
+        
+        <!-- Premium Logo -->
+        <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
+          <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+          <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
         </a>
 
         <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-6">
-          <a href="/" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Home</a>
-          <a href="/about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
-          <a href="/gallery.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Gallery</a>
-          <a href="/facilities.html" class="text-sm font-medium text-brand-accent transition-colors" aria-current="page">Facilities</a>
-          <a href="/contact" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Contact</a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-semibold text-brand-accent transition-colors" aria-current="page">Home</a>
+          <a href="about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
+          <a href="gallery.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Gallery</a>
+          <a href="facilities.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Facilities</a>
+          <a href="contact.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Contact</a>
           
-          <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme">
-            <!-- Icons injected by JS -->
-          </button>
+          <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme"></button>
 
-          <a href="/contact" class="px-5 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded hover:opacity-90 transition-all shadow-[0_0_15px_rgba(var(--accent)/0.3)]">
+          <a href="contact.html" class="px-6 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-[0_4px_14px_0_rgba(var(--accent),0.39)] hover:shadow-[0_6px_20px_rgba(var(--accent),0.23)] hover:-translate-y-0.5 transition-all">
             Check Availability
           </a>
         </nav>
 
         <!-- Mobile Controls -->
         <div class="flex items-center gap-4 md:hidden">
-          <button id="theme-toggle-mobile" class="p-2 text-brand-muted hover:text-brand-accent focus:outline-none">
-             <!-- Icons injected by JS -->
-          </button>
+          <button id="theme-toggle-mobile" class="p-2 text-brand-muted hover:text-brand-accent focus:outline-none"></button>
           <button id="menu-toggle" class="text-brand-text hover:text-brand-accent focus:outline-none p-2" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
       </div>
 
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="mobile-menu-overlay"></div>
-        <div class="absolute top-[60px] right-0 w-64 h-[calc(100vh-60px)] bg-brand-surface border-l border-brand-border flex flex-col p-6 space-y-6 shadow-2xl transition-colors duration-300">
-          <a href="/" class="text-lg font-medium text-brand-text hover:text-brand-accent">Home</a>
-          <a href="/about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
-          <a href="/gallery.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Gallery</a>
-          <a href="/facilities.html" class="text-lg font-medium text-brand-accent">Facilities</a>
-          <a href="/contact" class="text-lg font-medium text-brand-text hover:text-brand-accent">Contact</a>
-          <a href="/contact" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+        <div class="absolute top-[70px] right-0 w-72 h-[calc(100vh-70px)] bg-brand-surface border-l border-brand-border flex flex-col p-8 space-y-6 shadow-2xl transition-all duration-300">
+          <a href="index.html" class="text-lg font-bold text-brand-accent">Home</a>
+          <a href="about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
+          <a href="gallery.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Gallery</a>
+          <a href="facilities.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Facilities</a>
+          <a href="contact.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Contact</a>
+          <a href="contact.html" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
         </div>
       </div>
     </header>
-
+    
     <main class="flex-grow pt-24 pb-12">
       
       <!-- Hero Section -->
