@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facilities | BeachViewStays.pk - Premium Amenities in DHA</title>
+    <meta name="description" content="Discover the amenities at BeachViewStays.pk. Fully furnished apartments with AC, WiFi, Kitchenette, 24/7 water, and daily housekeeping in DHA Karachi." />
+    <link rel="canonical" href="https://beachviewstays.pk/facilities" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beachviewstays.pk/facilities" />
+    <meta property="og:title" content="Facilities | BeachViewStays.pk" />
+    <meta property="og:description" content="Everything you need for a smooth stay. WiFi, AC, Kitchenette, and more." />
+    <meta property="og:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Facilities | BeachViewStays.pk" />
+    <meta name="twitter:description" content="Premium amenities for short and long stays in DHA Karachi." />
+    <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "BeachViewStays.pk",
+        "description": "Premium serviced 1-bedroom apartments near the beach in DHA Karachi.",
+        "url": "https://beachviewstays.pk/facilities",
+        "telephone": "+923068230101",
+        "email": "karachi.apartments@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "DHA",
+          "addressRegion": "Karachi",
+          "addressCountry": "PK"
+        },
+        "numberOfRooms": 5,
+        "amenityFeature": [
+            { "@type": "LocationFeatureSpecification", "name": "High-speed Wi-Fi", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Kitchenette", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "24/7 Sweet Water", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Daily Housekeeping", "value": true }
+        ],
+        "priceRange": "$$"
+      }
+    </script>
+    
+    <!-- Theme Initialization -->
+    <script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.dataset.theme = 'dark';
+          } else {
+            document.documentElement.dataset.theme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: 'rgb(var(--bg-main) / <alpha-value>)',       
+                surface: 'rgb(var(--bg-surface) / <alpha-value>)',
+                border: 'rgb(var(--border) / <alpha-value>)',
+                text: 'rgb(var(--text-main) / <alpha-value>)',
+                muted: 'rgb(var(--text-muted) / <alpha-value>)',
+                accent: 'rgb(var(--accent) / <alpha-value>)',
+                highlight: 'rgb(var(--highlight) / <alpha-value>)',
+                gold: '#fbbf24',
+              }
+            },
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* Light Theme */
+        --bg-main: 248 250 252;
+        --bg-surface: 255 255 255;
+        --text-main: 15 23 42;
+        --text-muted: 100 116 139;
+        --border: 226 232 240;
+        --accent: 13 148 136;
+        --highlight: 225 29 72;
+      }
+      [data-theme="dark"] {
+        /* Dark Theme */
+        --bg-main: 2 6 23;
+        --bg-surface: 15 23 42;
+        --text-main: 241 245 249;
+        --text-muted: 148 163 184;
+        --border: 30 41 59;
+        --accent: 45 212 191;
+        --highlight: 244 63 94;
+      }
+      body { transition: color 0.3s, background-color 0.3s; }
+      *, *::before, *::after { border-color: rgb(var(--border)); }
+      html { scroll-behavior: smooth; }
+      
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, visibility;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      
+      /* Micro-interactions */
+      .facility-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px -10px rgba(var(--accent), 0.15);
+      }
+    </style>
+  </head>
+  <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
+      <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+        <a href="/" class="text-xl md:text-2xl font-bold tracking-tight text-brand-text group">
+          BeachView<span class="text-brand-accent">Stays</span><span class="text-brand-muted">.pk</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-6">
+          <a href="/" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Home</a>
+          <a href="/about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
+          <a href="/gallery.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Gallery</a>
+          <a href="/facilities.html" class="text-sm font-medium text-brand-accent transition-colors" aria-current="page">Facilities</a>
+          <a href="/contact" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Contact</a>
+          
+          <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme">
+            <!-- Icons injected by JS -->
+          </button>
+
+          <a href="/contact" class="px-5 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded hover:opacity-90 transition-all shadow-[0_0_15px_rgba(var(--accent)/0.3)]">
+            Check Availability
+          </a>
+        </nav>
+
+        <!-- Mobile Controls -->
+        <div class="flex items-center gap-4 md:hidden">
+          <button id="theme-toggle-mobile" class="p-2 text-brand-muted hover:text-brand-accent focus:outline-none">
+             <!-- Icons injected by JS -->
+          </button>
+          <button id="menu-toggle" class="text-brand-text hover:text-brand-accent focus:outline-none p-2" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+        <div class="absolute top-[60px] right-0 w-64 h-[calc(100vh-60px)] bg-brand-surface border-l border-brand-border flex flex-col p-6 space-y-6 shadow-2xl transition-colors duration-300">
+          <a href="/" class="text-lg font-medium text-brand-text hover:text-brand-accent">Home</a>
+          <a href="/about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
+          <a href="/gallery.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Gallery</a>
+          <a href="/facilities.html" class="text-lg font-medium text-brand-accent">Facilities</a>
+          <a href="/contact" class="text-lg font-medium text-brand-text hover:text-brand-accent">Contact</a>
+          <a href="/contact" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-12">
+      
+      <!-- Hero Section -->
+      <section class="container mx-auto px-6 max-w-7xl mb-20 fade-in-section">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-8">
+            <span class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-wider text-brand-accent uppercase border border-brand-accent/30 rounded-full bg-brand-accent/5">Facilities</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-brand-text mb-6">
+              Everything you need <br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-500">for a smooth stay.</span>
+            </h1>
+            <p class="text-lg text-brand-muted leading-relaxed max-w-2xl border-l-2 border-brand-border pl-6">
+              Our 5 exclusive units in DHA Karachi are equipped to serve short-term travelers and families who value privacy, hygiene, and premium utilities.
+            </p>
+          </div>
+          
+          <!-- Quick Summary Card -->
+          <div class="lg:col-span-4">
+            <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-xl relative overflow-hidden">
+               <h3 class="text-sm font-bold text-brand-text uppercase tracking-widest mb-4">Quick Summary</h3>
+               <div class="flex flex-wrap gap-2">
+                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">High-speed Wi-Fi</span>
+                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">Housekeeping</span>
+                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">Kitchenette</span>
+                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">Secure & Peaceful</span>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Facilities Grid -->
+      <section class="container mx-auto px-6 max-w-7xl mb-24 fade-in-section">
+        <h2 class="text-3xl font-bold text-brand-text mb-10">Premium Amenities</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Card 1 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">🛋️</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Included</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">Fully Furnished</h3>
+            <p class="text-sm text-brand-muted">Tastefully designed interiors with comfortable seating and bedding.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">📶</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Utility</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">High-Speed Wi-Fi</h3>
+            <p class="text-sm text-brand-muted">Reliable connectivity for remote work or streaming entertainment.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">❄️</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Comfort</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">Air Conditioning</h3>
+            <p class="text-sm text-brand-muted">Efficient Split ACs installed in every unit for your comfort.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">🧹</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Service</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">Daily Housekeeping</h3>
+            <p class="text-sm text-brand-muted">Our staff ensures your space remains spotless and hygienic.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">🍳</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Utility</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">Kitchenette</h3>
+            <p class="text-sm text-brand-muted">Equipped with Fridge, Microwave, and Stove for light cooking.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">📺</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Media</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">Smart TV</h3>
+            <p class="text-sm text-brand-muted">Access Netflix, YouTube, and more directly from your lounge.</p>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">🚿</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Comfort</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">Attached Bath</h3>
+            <p class="text-sm text-brand-muted">Modern fittings with an electric geyser for instant hot water.</p>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-2xl">💧</span>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Utility</span>
+            </div>
+            <h3 class="text-lg font-bold text-brand-text mb-2">24/7 Sweet Water</h3>
+            <p class="text-sm text-brand-muted">Continuous line water supply. No shortages, no hassle.</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Utilities & Comfort Split -->
+      <section class="bg-brand-surface border-y border-brand-border py-20 fade-in-section transition-colors duration-300">
+        <div class="container mx-auto px-6 max-w-7xl">
+          <div class="grid md:grid-cols-2 gap-16">
+            
+            <!-- Column 1 -->
+            <div>
+              <h3 class="text-2xl font-bold text-brand-text mb-6 pb-4 border-b border-brand-border">Utilities</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
+                  <span class="text-brand-text font-medium">24/7 Sweet Water Supply</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
+                  <span class="text-brand-text font-medium">Electric Geyser (Hot Water)</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
+                  <span class="text-brand-text font-medium">Powerful Air Conditioning</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
+                  <span class="text-brand-text font-medium">Secure Entrance</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+              <h3 class="text-2xl font-bold text-brand-text mb-6 pb-4 border-b border-brand-border">Comfort & Living</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
+                  <span class="text-brand-text font-medium">Spacious Lounge Area</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
+                  <span class="text-brand-text font-medium">Kitchenette (Fridge, Microwave, Stove)</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
+                  <span class="text-brand-text font-medium">Modern Attached Bathroom</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
+                  <span class="text-brand-text font-medium">Smart TV Entertainment</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- For Who This Works Best -->
+      <section class="container mx-auto px-6 max-w-7xl py-24 fade-in-section">
+        <h2 class="text-center text-3xl font-bold text-brand-text mb-12">Who Stays With Us?</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
+            <h3 class="text-xl font-bold text-brand-text mb-2">Families</h3>
+            <p class="text-brand-muted text-sm">Safe, private, and hygienic environment for peace of mind.</p>
+          </div>
+          <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
+            <h3 class="text-xl font-bold text-brand-text mb-2">Tourists</h3>
+            <p class="text-brand-muted text-sm">Central DHA location near Sea View for easy exploration.</p>
+          </div>
+          <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
+            <h3 class="text-xl font-bold text-brand-text mb-2">Privacy Seekers</h3>
+            <p class="text-brand-muted text-sm">A quiet retreat that feels like home, better than a hotel.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Band -->
+      <section class="container mx-auto px-6 max-w-5xl pb-20 fade-in-section">
+        <div class="bg-gradient-to-r from-brand-accent to-teal-600 rounded-2xl p-10 text-center shadow-2xl relative overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-30"></div>
+          <h2 class="text-3xl font-bold text-white mb-4 relative z-10">Ready to Book?</h2>
+          <p class="text-teal-50 mb-8 relative z-10">Send us your dates and guests, we’ll confirm availability fast.</p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+            <a href="https://wa.me/923068230101?text=Hi%20Beach%20View%20Stays%2C%20I%20want%20to%20check%20availability.%20Check-in%3A%20_%20%2F%20Check-out%3A%20_%20%2F%20Guests%3A%20__" target="_blank" class="px-8 py-3 bg-white text-teal-700 font-bold rounded shadow-lg hover:bg-teal-50 transition-colors">
+              WhatsApp for Dates
+            </a>
+            <a href="/contact" class="px-8 py-3 border border-white text-white font-bold rounded hover:bg-white/10 transition-colors">
+              Check Availability
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-brand-border pt-16 pb-8 transition-colors duration-300">
+      <div class="container mx-auto px-6 max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <a href="/" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
+              BeachView<span class="text-brand-accent">Stays</span>
+            </a>
+            <p class="text-brand-muted text-sm mb-4">
+              Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
+            </p>
+            <p class="text-brand-muted text-sm">
+              <span class="block text-brand-text text-xs uppercase font-bold tracking-wider mb-1">Email</span>
+              karachi.apartments@gmail.com
+            </p>
+          </div>
+          <div>
+            <h4 class="text-brand-text font-bold mb-6">Quick Links</h4>
+            <ul class="space-y-3 text-sm text-brand-muted">
+              <li><a href="/" class="hover:text-brand-accent transition-colors">Home</a></li>
+              <li><a href="/about.html" class="hover:text-brand-accent transition-colors">About</a></li>
+              <li><a href="/gallery.html" class="hover:text-brand-accent transition-colors">Gallery</a></li>
+              <li><a href="/facilities.html" class="hover:text-brand-accent transition-colors">Facilities</a></li>
+              <li><a href="/contact" class="hover:text-brand-accent transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-brand-text font-bold mb-6">Location</h4>
+            <p class="text-brand-muted text-sm mb-2">DHA, Karachi, Pakistan</p>
+            <p class="text-brand-muted text-sm mb-4">Near Sea View Beach</p>
+            <a href="https://wa.me/923068230101" class="text-brand-accent text-sm font-bold hover:underline">Get Directions via WhatsApp &rarr;</a>
+          </div>
+        </div>
+        <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> BeachViewStays.pk. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923068230101" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group" aria-label="Chat on WhatsApp">
+      <svg class="w-8 h-8 text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+    </a>
+
+    <!-- Application Logic -->
+    <script>
+      // DOM Elements
+      const html = document.documentElement;
+      const toggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+      const menuBtn = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuOverlay = document.getElementById('mobile-menu-overlay');
+      const navbar = document.getElementById('navbar');
+      const yearSpan = document.getElementById('year');
+
+      // Theme Icons
+      const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
+      const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
+
+      // State
+      let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      // Init Theme UI
+      function updateThemeUI() {
+        toggleBtns.forEach(btn => {
+          if(!btn) return;
+          btn.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+          btn.title = theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode";
+          btn.setAttribute('aria-pressed', theme === 'dark');
+        });
+        html.dataset.theme = theme;
+      }
+
+      // Toggle Logic
+      function toggleTheme() {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', theme);
+        updateThemeUI();
+      }
+
+      toggleBtns.forEach(btn => {
+        if(btn) btn.addEventListener('click', toggleTheme);
+      });
+      updateThemeUI();
+
+      // Navbar Scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add('bg-brand-dark/90', 'backdrop-blur-md', 'border-brand-border', 'py-3');
+          navbar.classList.remove('py-5', 'border-transparent');
+        } else {
+          navbar.classList.remove('bg-brand-dark/90', 'backdrop-blur-md', 'border-brand-border', 'py-3');
+          navbar.classList.add('py-5', 'border-transparent');
+        }
+      });
+
+      // Mobile Menu
+      function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+      }
+      if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+      if(menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) mobileMenu.classList.add('hidden');
+      });
+
+      // Footer Year
+      if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      // Animations
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+
+    </script>
+  </body>
+</html>

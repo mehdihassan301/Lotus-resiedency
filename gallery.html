@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | BeachViewStays.pk - Luxury Apartment Tour</title>
+    <meta name="description" content="Explore our premium 1-bedroom serviced apartments in DHA Karachi. View bedrooms, lounges, kitchens, and amenities. Book your stay today." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://beachviewstays.pk/gallery" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beachviewstays.pk/gallery" />
+    <meta property="og:title" content="Gallery | BeachViewStays" />
+    <meta property="og:description" content="Visual tour of our premium serviced apartments near the beach in DHA Karachi." />
+    <meta property="og:image" content="https://beachviewstays.pk/assets/hero-2.webp" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gallery | BeachViewStays.pk" />
+    <meta name="twitter:description" content="Visual tour of our premium serviced apartments near the beach in DHA Karachi." />
+    <meta name="twitter:image" content="https://beachviewstays.pk/assets/hero-2.webp" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "BeachViewStays Apartment Gallery",
+        "description": "Photos of bedrooms, lounges, kitchens and bathrooms.",
+        "url": "https://beachviewstays.pk/gallery",
+        "mainEntity": {
+             "@type": "LodgingBusiness",
+             "name": "BeachViewStays.pk",
+             "url": "https://beachviewstays.pk/"
+        }
+      }
+    </script>
+    
+    <script>
+      (function() {
+        try {
+          const savedTheme = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.dataset.theme = 'dark';
+          } else {
+            document.documentElement.dataset.theme = 'light';
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: ['class', '[data-theme="dark"]'],
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: 'rgb(var(--bg-main) / <alpha-value>)',       
+                surface: 'rgb(var(--bg-surface) / <alpha-value>)',
+                border: 'rgb(var(--border) / <alpha-value>)',
+                text: 'rgb(var(--text-main) / <alpha-value>)',
+                muted: 'rgb(var(--text-muted) / <alpha-value>)',
+                accent: 'rgb(var(--accent) / <alpha-value>)',
+                highlight: 'rgb(var(--highlight) / <alpha-value>)',
+              }
+            },
+            fontFamily: {
+              sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+              serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --bg-main: 248 250 252;
+        --bg-surface: 255 255 255;
+        --text-main: 15 23 42;
+        --text-muted: 100 116 139;
+        --border: 226 232 240;
+        --accent: 13 148 136;
+        --highlight: 225 29 72;
+      }
+      [data-theme="dark"] {
+        --bg-main: 2 6 23;
+        --bg-surface: 15 23 42;
+        --text-main: 241 245 249;
+        --text-muted: 148 163 184;
+        --border: 30 41 59;
+        --accent: 45 212 191;
+        --highlight: 244 63 94;
+      }
+      body { transition: color 0.3s, background-color 0.3s; }
+      *, *::before, *::after { border-color: rgb(var(--border)); }
+      html { scroll-behavior: smooth; }
+      
+      .logo-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+      .logo-accent { font-family: 'Georgia', serif; font-style: italic; font-weight: 400; color: rgb(var(--accent)); }
+      
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, visibility;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      
+      .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 1.5rem;
+      }
+      .gallery-item.hidden-item { display: none; }
+    </style>
+  </head>
+  <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
+      <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+        
+         <!-- Premium Logo -->
+         <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
+            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+            <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Home</a>
+          <a href="about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
+          <a href="gallery.html" class="text-sm font-semibold text-brand-accent transition-colors" aria-current="page">Gallery</a>
+          <a href="facilities.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Facilities</a>
+          <a href="contact.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Contact</a>
+          
+          <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme"></button>
+
+          <a href="contact.html" class="px-6 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-[0_4px_14px_0_rgba(var(--accent),0.39)] hover:shadow-[0_6px_20px_rgba(var(--accent),0.23)] hover:-translate-y-0.5 transition-all">
+            Check Availability
+          </a>
+        </nav>
+
+        <!-- Mobile Controls -->
+        <div class="flex items-center gap-4 md:hidden">
+          <button id="theme-toggle-mobile" class="p-2 text-brand-muted hover:text-brand-accent focus:outline-none"></button>
+          <button id="menu-toggle" class="text-brand-text hover:text-brand-accent focus:outline-none p-2" aria-label="Toggle menu">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+        <div class="absolute top-[70px] right-0 w-72 h-[calc(100vh-70px)] bg-brand-surface border-l border-brand-border flex flex-col p-8 space-y-6 shadow-2xl transition-all duration-300">
+          <a href="index.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Home</a>
+          <a href="about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
+          <a href="gallery.html" class="text-lg font-bold text-brand-accent">Gallery</a>
+          <a href="facilities.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Facilities</a>
+          <a href="contact.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Contact</a>
+          <a href="contact.html" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow pt-24 pb-12">
+      
+      <!-- Hero -->
+      <section class="container mx-auto px-6 max-w-7xl mb-12 fade-in-section text-center">
+        <span class="inline-block px-3 py-1 mb-4 text-xs font-bold tracking-wider text-brand-accent uppercase border border-brand-accent/30 rounded-full bg-brand-accent/5">Gallery</span>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-brand-text mb-4">
+          Our <span class="text-brand-accent">Spaces</span>
+        </h1>
+        <p class="text-lg text-brand-muted max-w-2xl mx-auto">
+          A visual tour of our meticulously designed apartments, where comfort meets elegance.
+        </p>
+      </section>
+
+      <!-- Filters -->
+      <section class="container mx-auto px-6 max-w-7xl mb-12 fade-in-section">
+        <div class="flex flex-wrap justify-center gap-3" id="filters">
+          <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-brand-accent text-white border-brand-accent" data-filter="all">All</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="bedroom">Bedroom</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="lounge">Lounge</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="kitchen">Kitchen</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="bath">Bath</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="amenities">Amenities</button>
+        </div>
+      </section>
+
+      <!-- Gallery Grid -->
+      <section class="container mx-auto px-6 max-w-7xl mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+          
+          <!-- Image 1 -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="bedroom" tabindex="0">
+            <img src="/assets/gallery/bedroom-1.webp" alt="Luxury Master Bedroom with Queen Bed" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="eager" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Master Bedroom Suite</p>
+            </div>
+          </div>
+          <!-- Image 2 -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="lounge" tabindex="0">
+            <img src="/assets/gallery/lounge-1.webp" alt="Spacious Lounge Area with Sofa" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="eager" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Modern Living Area</p>
+            </div>
+          </div>
+          <!-- Image 3 -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="kitchen" tabindex="0">
+            <img src="/assets/gallery/kitchen-1.webp" alt="Fully Equipped Kitchenette" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Equipped Kitchenette</p>
+            </div>
+          </div>
+          <!-- Image 4 -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="bedroom" tabindex="0">
+            <img src="/assets/gallery/bedroom-2.webp" alt="Cozy Bedroom Lighting and Decor" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Cozy Ambience</p>
+            </div>
+          </div>
+           <!-- Image 5 -->
+           <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="lounge" tabindex="0">
+            <img src="/assets/gallery/lounge-2.webp" alt="Lounge with Smart TV Setup" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Smart Entertainment</p>
+            </div>
+          </div>
+          <!-- Image 6 -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="bath" tabindex="0">
+            <img src="/assets/gallery/bath-1.webp" alt="Clean Bathroom with Hot Water" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Hygienic Washroom</p>
+            </div>
+          </div>
+          <!-- Image 7 -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="amenities" tabindex="0">
+            <img src="/assets/gallery/amenities-1.webp" alt="Apartment Amenities Overview" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Premium Amenities</p>
+            </div>
+          </div>
+           <!-- Image 8 -->
+           <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md" data-category="amenities" tabindex="0">
+            <img src="/assets/gallery/amenities-2.webp" alt="Secure Entrance and Building" class="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" width="800" height="600" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium">Secure Environment</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="no-results" class="hidden text-center py-12">
+          <p class="text-brand-muted">No images found for this category.</p>
+        </div>
+      </section>
+
+      <!-- CTA Band -->
+      <section class="container mx-auto px-6 max-w-5xl py-12 fade-in-section">
+        <div class="bg-gradient-to-r from-brand-accent to-teal-600 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+          <div class="text-center md:text-left">
+             <h2 class="text-2xl font-bold text-white mb-2">Like what you see?</h2>
+             <p class="text-teal-50 text-sm">Our apartments look even better in person. Book your dates now.</p>
+          </div>
+          <a href="https://wa.me/923068230101?text=Hi%20Beach%20View%20Stays%2C%20I%20saw%20the%20gallery%20and%20want%20to%20book." target="_blank" class="flex items-center gap-2 px-6 py-3 bg-white text-teal-700 font-bold rounded shadow-lg hover:bg-teal-50 transition-colors shrink-0">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.
