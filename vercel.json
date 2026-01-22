@@ -1,24 +1,8 @@
 {
-  "routes": [
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
-    },
-    {
-      "src": "/sitemap-pages.xml",
-      "dest": "/sitemap-pages.xml"
-    },
-    {
-      "src": "/sitemap-images.xml",
-      "dest": "/sitemap-images.xml"
-    },
-    {
-      "src": "/robots.txt",
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/facilities", "destination": "/facilities.html" },
+    { "source": "/contact", "destination": "/contact.html" }
   ]
 }
