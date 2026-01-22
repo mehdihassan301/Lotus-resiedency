@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const IMAGES = [
-  '/assets/hero-1.webp',
-  '/assets/hero-2.webp',
-  '/assets/hero-3.webp'
+  '/assets/hero-1.jpg',
+  '/assets/hero-2.jpg',
+  '/assets/hero-3.jpg'
 ];
 
 const Hero: React.FC = () => {
