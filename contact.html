@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact & Booking | Beach View Stays - DHA Karachi</title>
-    <meta name="description" content="Book your stay at BeachViewStays.pk. Check availability for premium 1-bedroom serviced apartments in DHA Karachi via WhatsApp. Instant response." />
+    <meta name="description" content="Book your stay at Beach View Stays. Check availability for premium 1-bedroom serviced apartments in DHA Karachi via WhatsApp. Instant response." />
     <link rel="canonical" href="https://beachviewstays.pk/contact" />
     
     <!-- Open Graph -->
@@ -20,12 +20,12 @@
     <meta name="twitter:description" content="Secure, hygienic, premium living. Book via WhatsApp today." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-contact.jpg" />
 
-        <!-- Schema.org JSON-LD -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LodgingBusiness",
-        "name": "BeachViewStays",
+        "name": "Beach View Stays",
         "description": "Premium serviced 1-bedroom apartments near the beach in DHA Karachi.",
         "url": "https://beachviewstays.pk/contact",
         "telephone": "+923068230101",
@@ -40,18 +40,16 @@
       }
     </script>
     
-    <!-- Theme Initialization -->
+    <!-- Theme Script: Default to Light -->
     <script>
       (function() {
         try {
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.documentElement.dataset.theme = 'dark';
-          } else {
-            document.documentElement.dataset.theme = 'light';
-          }
-        } catch (e) {}
+          var savedTheme = localStorage.getItem('theme');
+          var theme = savedTheme === 'dark' ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
       })();
     </script>
 
@@ -141,13 +139,14 @@
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
 
-    <!-- Header -->
+ <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
-         <!-- Premium Logo -->
-         <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
-            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
-            <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
+        
+        <!-- Premium Logo -->
+        <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
+          <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+          <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
         </a>
 
         <!-- Desktop Nav -->
@@ -229,6 +228,18 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6">
+                  <!-- Guests -->
+                  <div class="space-y-2">
+                    <label for="guests" class="text-sm font-semibold text-brand-text">Guests *</label>
+                    <select id="guests" name="guests" required class="w-full px-4 py-3 rounded-lg border border-brand-border text-brand-text focus:border-brand-accent transition-colors">
+                      <option value="1">1 Person</option>
+                      <option value="2">2 People</option>
+                      <option value="3">3 People</option>
+                      <option value="4">4 People</option>
+                      <option value="5">5 People</option>
+                      <option value="6">6 People (Max)</option>
+                    </select>
+                  </div>
                   <!-- Contact Method -->
                   <div class="space-y-2">
                     <label for="method" class="text-sm font-semibold text-brand-text">Preferred Reply via</label>
@@ -255,7 +266,7 @@
                 <!-- Notes -->
                 <div class="space-y-2">
                   <label for="notes" class="text-sm font-semibold text-brand-text">Special Requests / Notes</label>
-                  <textarea id="notes" name="notes" rows="3" placeholder="Early check-in request, Late check-out etc." class="w-full px-4 py-3 rounded-lg border border-brand-border text-brand-text focus:border-brand-accent transition-colors resize-none"></textarea>
+                  <textarea id="notes" name="notes" rows="3" placeholder="Early check-in request, parking needed, etc." class="w-full px-4 py-3 rounded-lg border border-brand-border text-brand-text focus:border-brand-accent transition-colors resize-none"></textarea>
                 </div>
 
                 <!-- Actions -->
@@ -320,11 +331,11 @@
                 </li>
                 <li class="flex items-center gap-2 text-sm text-brand-muted">
                   <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  Early check-in 
+                  Confirm number of guests
                 </li>
                 <li class="flex items-center gap-2 text-sm text-brand-muted">
                   <svg class="w-4 h-4 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                  Late Check out date
+                  Let us know of special requests
                 </li>
               </ul>
             </div>
@@ -372,7 +383,7 @@
               <svg class="w-5 h-5 text-brand-muted transform transition-transform group-hover:text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
             <div class="hidden px-6 pb-4 text-sm text-brand-muted leading-relaxed faq-content">
-              Rent includes high-speed Wi-Fi, water, gas, electric kettle, Air-conditioning and electricity . Daily housekeeping is also provided.
+              Rent includes high-speed Wi-Fi, water, gas, and electricity. Daily housekeeping is also provided.
             </div>
           </div>
         </div>
@@ -387,7 +398,7 @@
              <a href="https://wa.me/923068230101?text=Hi%20Beach%20View%20Stays%2C%20I%20want%20to%20check%20availability.%20Check-in%3A%20_%20%2F%20Check-out%3A%20_%20%2F%20Guests%3A%20__" target="_blank" class="px-8 py-3 bg-brand-accent text-white dark:text-slate-950 font-bold rounded hover:opacity-90 transition-all shadow-md">
               WhatsApp for Dates
             </a>
-            <a href="/gallery.html" class="px-8 py-3 border border-brand-border text-brand-text font-bold rounded hover:border-brand-accent hover:text-brand-accent transition-colors">
+            <a href="gallery.html" class="px-8 py-3 border border-brand-border text-brand-text font-bold rounded hover:border-brand-accent hover:text-brand-accent transition-colors">
               View Gallery
             </a>
           </div>
@@ -401,8 +412,8 @@
       <div class="container mx-auto px-6 max-w-7xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <a href="/" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
-              BeachView<span class="text-brand-accent">Stays</span>
+            <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
+              Beach View <span class="logo-accent">Stays</span>
             </a>
             <p class="text-brand-muted text-sm mb-4">
               Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
@@ -415,11 +426,11 @@
           <div>
             <h4 class="text-brand-text font-bold mb-6">Quick Links</h4>
             <ul class="space-y-3 text-sm text-brand-muted">
-              <li><a href="/" class="hover:text-brand-accent transition-colors">Home</a></li>
-              <li><a href="/about.html" class="hover:text-brand-accent transition-colors">About</a></li>
-              <li><a href="/gallery.html" class="hover:text-brand-accent transition-colors">Gallery</a></li>
-              <li><a href="/facilities.html" class="hover:text-brand-accent transition-colors">Facilities</a></li>
-              <li><a href="/contact" class="hover:text-brand-accent transition-colors">Contact</a></li>
+              <li><a href="index.html" class="hover:text-brand-accent transition-colors">Home</a></li>
+              <li><a href="about.html" class="hover:text-brand-accent transition-colors">About</a></li>
+              <li><a href="gallery.html" class="hover:text-brand-accent transition-colors">Gallery</a></li>
+              <li><a href="facilities.html" class="hover:text-brand-accent transition-colors">Facilities</a></li>
+              <li><a href="contact.html" class="hover:text-brand-accent transition-colors">Contact</a></li>
             </ul>
           </div>
           <div>
@@ -429,8 +440,8 @@
             <a href="https://wa.me/923068230101" class="text-brand-accent text-sm font-bold hover:underline">Get Directions via WhatsApp &rarr;</a>
           </div>
         </div>
-        <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> BeachViewStays.pk. All rights reserved.</p>
+        <div class="border-t border-brand-border pt-8 text-center md:text-left">
+          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> Beach View Stays. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -456,7 +467,7 @@
       const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
 
       // State
-      let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      let theme = localStorage.getItem('theme') || 'light';
 
       // Init Theme UI
       function updateThemeUI() {
@@ -513,7 +524,7 @@
           }
         });
       }, { threshold: 0.1 });
-      document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+      document.querySelectorAll('.fade-in-section, .stagger-grid').forEach(el => observer.observe(el));
 
 
       // ---- Contact Page Logic ----
