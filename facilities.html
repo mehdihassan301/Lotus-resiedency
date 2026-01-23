@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Facilities | Beach View Stays - Premium Amenities in DHA</title>
+    <title>Facilities | BeachViewStays.pk - Premium Amenities in DHA</title>
     <meta name="description" content="Discover the amenities at BeachViewStays.pk. Fully furnished apartments with AC, WiFi, Kitchenette, 24/7 water, and daily housekeeping in DHA Karachi." />
     <link rel="canonical" href="https://beachviewstays.pk/facilities" />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://beachviewstays.pk/facilities" />
-    <meta property="og:title" content="Facilities | Beach View Stays" />
+    <meta property="og:title" content="Facilities | BeachViewStays.pk" />
     <meta property="og:description" content="Everything you need for a smooth stay. WiFi, AC, Kitchenette, and more." />
     <meta property="og:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Facilities | Beach View Stays" />
+    <meta name="twitter:title" content="Facilities | BeachViewStays.pk" />
     <meta name="twitter:description" content="Premium amenities for short and long stays in DHA Karachi." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
 
@@ -28,7 +28,7 @@
       {
         "@context": "https://schema.org",
         "@type": "LodgingBusiness",
-        "name": "BeachViewStays",
+        "name": "BeachViewStays.pk",
         "description": "Premium serviced 1-bedroom apartments near the beach in DHA Karachi.",
         "url": "https://beachviewstays.pk/facilities",
         "telephone": "+923068230101",
@@ -45,7 +45,9 @@
             { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
             { "@type": "LocationFeatureSpecification", "name": "Kitchenette", "value": true },
             { "@type": "LocationFeatureSpecification", "name": "24/7 Sweet Water", "value": true },
-            { "@type": "LocationFeatureSpecification", "name": "Daily Housekeeping", "value": true }
+            { "@type": "LocationFeatureSpecification", "name": "Daily Housekeeping", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Electric Kettle", "value": true },
+            { "@type": "LocationFeatureSpecification", "name": "Iron & Board", "value": true }
         ],
         "priceRange": "$$"
       }
@@ -253,6 +255,8 @@
       .stagger-grid.is-visible .amenity-card:nth-child(6) { transition-delay: 0.30s; }
       .stagger-grid.is-visible .amenity-card:nth-child(7) { transition-delay: 0.35s; }
       .stagger-grid.is-visible .amenity-card:nth-child(8) { transition-delay: 0.40s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(9) { transition-delay: 0.45s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(10) { transition-delay: 0.50s; }
 
       /* Quick Summary Fallback */
       .lottie-container {
@@ -354,16 +358,16 @@
           <!-- Premium Quick Summary Card -->
           <div class="lg:col-span-5">
             <div class="bg-brand-surface border border-brand-border rounded-2xl shadow-2xl relative overflow-hidden flex flex-col sm:flex-row h-full group hover:shadow-brand-accent/10 transition-shadow duration-500">
-               <!-- Animation Column -->
+               <!-- Animation Column (Checklist Animation) -->
                <div class="relative w-full sm:w-2/5 min-h-[180px] bg-gradient-to-br from-brand-accent/5 via-brand-surface to-brand-accent/10 flex items-center justify-center p-4 lottie-container">
                   <lottie-player 
-                    src="https://lottie.host/8022839e-4c55-4422-902e-c7207043869d/default.json" 
+                    src="https://assets2.lottiefiles.com/packages/lf20_1efy9h.json" 
                     background="transparent" 
                     speed="1" 
-                    style="width: 100%; height: 100%; max-width: 120px;" 
+                    style="width: 100%; height: 100%; max-width: 140px;" 
                     loop 
                     autoplay
-                    aria-label="Animation representing comfort and hospitality"
+                    aria-label="Checklist animation symbolizing verified amenities"
                   ></lottie-player>
                   
                   <!-- Reduced Motion Fallback -->
@@ -501,6 +505,30 @@
             </div>
             <h3 class="amenity-title">24/7 Sweet Water</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Continuous supply of clean water without shortages, a luxury in itself.</p>
+          </div>
+
+          <!-- Card 9: Electric Kettle -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12h-3m3 0a3 3 0 11-6 0 3 3 0 016 0zm-9 0V7a3 3 0 013-3h3a3 3 0 013 3v5M3 13l2.82 5.08a2 2 0 001.75 1.03h8.86a2 2 0 001.75-1.03L21 13" /></svg>
+              </div>
+              <span class="amenity-meta">Kitchen</span>
+            </div>
+            <h3 class="amenity-title">Electric Kettle</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Prepare tea or coffee anytime with a dedicated electric kettle in your kitchenette.</p>
+          </div>
+
+          <!-- Card 10: Iron -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 19H5m14 0l-2-10a2 2 0 00-2-1.7h-7a2 2 0 00-2 1.7L6 19m13 0h2" /></svg>
+              </div>
+              <span class="amenity-meta">Service</span>
+            </div>
+            <h3 class="amenity-title">Iron & Board</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Look your best for meetings or outings. Ironing facilities provided on request.</p>
           </div>
 
         </div>
