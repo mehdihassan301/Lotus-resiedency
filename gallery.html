@@ -26,28 +26,27 @@
       {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "BeachViewStays Apartment Gallery",
+        "name": "Beach View Stays Apartment Gallery",
         "description": "Photos of bedrooms, lounges, kitchens and bathrooms.",
         "url": "https://beachviewstays.pk/gallery",
         "mainEntity": {
              "@type": "LodgingBusiness",
-             "name": "BeachViewStays.pk",
+             "name": "Beach View Stays",
              "url": "https://beachviewstays.pk/"
         }
       }
     </script>
     
+    <!-- Theme Script: Default to Light -->
     <script>
       (function() {
         try {
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.documentElement.dataset.theme = 'dark';
-          } else {
-            document.documentElement.dataset.theme = 'light';
-          }
-        } catch (e) {}
+          var savedTheme = localStorage.getItem('theme');
+          var theme = savedTheme === 'dark' ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
       })();
     </script>
 
@@ -135,14 +134,14 @@
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
 
-    <!-- Header -->
+ <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         
-         <!-- Premium Logo -->
-         <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
-            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
-            <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
+        <!-- Premium Logo -->
+        <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
+          <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+          <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
         </a>
 
         <!-- Desktop Nav -->
@@ -265,7 +264,7 @@
            <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md aspect-[4/3]" data-category="amenities" tabindex="0">
             <img src="/assets/amenities-2.jpg" alt="Secure Entrance and Building" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
-              <p class="text-white font-medium drop-shadow-md">Internet Access</p>
+              <p class="text-white font-medium drop-shadow-md">Secure Environment</p>
             </div>
           </div>
         </div>
@@ -300,7 +299,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
-              BeachView<span class="logo-accent">Stays</span>
+              Beach View <span class="logo-accent">Stays</span>
             </a>
             <p class="text-brand-muted text-sm mb-4">
               Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
@@ -328,7 +327,7 @@
           </div>
         </div>
         <div class="border-t border-brand-border pt-8 text-center md:text-left">
-          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> BeachViewStays.pk. All rights reserved.</p>
+          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> Beach View Stays. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -375,7 +374,7 @@
       const overlay = document.getElementById('mobile-menu-overlay');
       const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
       
-      let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      let theme = localStorage.getItem('theme') || 'light';
       const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
       const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
 
