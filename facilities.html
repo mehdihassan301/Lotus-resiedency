@@ -20,9 +20,6 @@
     <meta name="twitter:description" content="Premium amenities for short and long stays in DHA Karachi." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
 
-    <!-- Lottie Player -->
-    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
@@ -53,11 +50,10 @@
       }
     </script>
     
-    <!-- Theme Script: Strictly Default to Light -->
+    <!-- Theme Script: Default to Light -->
     <script>
       (function() {
         try {
-          // Check local storage only. Ignore system preference to ensure Light default.
           var savedTheme = localStorage.getItem('theme');
           var theme = savedTheme === 'dark' ? 'dark' : 'light';
           document.documentElement.dataset.theme = theme;
@@ -95,7 +91,6 @@
     </script>
     <style>
       :root {
-        /* Light Theme */
         --bg-main: 248 250 252;
         --bg-surface: 255 255 255;
         --text-main: 15 23 42;
@@ -105,7 +100,6 @@
         --highlight: 225 29 72;
       }
       [data-theme="dark"] {
-        /* Dark Theme */
         --bg-main: 2 6 23;
         --bg-surface: 15 23 42;
         --text-main: 241 245 249;
@@ -132,21 +126,22 @@
         transform: none;
       }
 
-      /* --- AMENITY CARDS START --- */
       .amenity-card {
         position: relative;
-        background-color: rgb(var(--bg-surface));
-        border: 1px solid rgb(var(--border));
+        background: linear-gradient(135deg, rgba(var(--bg-surface), 0.9), rgba(var(--bg-surface), 0.6));
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(var(--border), 0.6);
         border-radius: 1rem;
         padding: 1.75rem;
         overflow: hidden;
         cursor: default;
         transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                     box-shadow 0.4s ease, 
-                    border-color 0.3s ease;
+                    border-color 0.3s ease,
+                    background 0.4s ease;
       }
 
-      /* Animated Sheen Effect */
       .amenity-card::before {
         content: '';
         position: absolute;
@@ -174,14 +169,10 @@
         transform: translateY(-5px);
         border-color: rgba(var(--accent), 0.4);
         box-shadow: 0 20px 40px -10px rgba(var(--accent), 0.15);
+        background: linear-gradient(135deg, rgba(var(--bg-surface), 0.95), rgba(var(--bg-surface), 0.8));
         outline: none;
       }
 
-      .amenity-card:active {
-        transform: scale(0.98);
-      }
-
-      /* Icon Styling - Premium Agency Look */
       .amenity-icon {
         display: inline-flex;
         align-items: center;
@@ -189,7 +180,6 @@
         width: 3.5rem;
         height: 3.5rem;
         border-radius: 1rem;
-        /* Premium Default State: Colored background tint and accent color icon */
         background-color: rgba(var(--accent), 0.08); 
         color: rgb(var(--accent));
         border: 1px solid rgba(var(--accent), 0.15);
@@ -200,10 +190,9 @@
         overflow: hidden;
       }
 
-      /* Hover State: High contrast flip */
       .amenity-card:hover .amenity-icon {
         background-color: rgb(var(--accent));
-        color: rgb(var(--bg-surface)); /* White/Surface icon on hover */
+        color: rgb(var(--bg-surface));
         border-color: transparent;
         transform: scale(1.1) rotate(3deg);
         box-shadow: 0 10px 20px -5px rgba(var(--accent), 0.4);
@@ -234,59 +223,118 @@
         border: 1px solid rgba(var(--accent), 0.2);
       }
 
-      /* Staggered Reveal Animation */
-      .stagger-grid .amenity-card {
+      .stagger-grid .amenity-card, .stagger-grid .loc-card {
         opacity: 0;
         transform: translateY(30px);
         transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
       
-      .stagger-grid.is-visible .amenity-card {
+      .stagger-grid.is-visible .amenity-card, .stagger-grid.is-visible .loc-card {
         opacity: 1;
         transform: translateY(0);
       }
 
-      .stagger-grid.is-visible .amenity-card:nth-child(1) { transition-delay: 0.05s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(2) { transition-delay: 0.10s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(3) { transition-delay: 0.15s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(4) { transition-delay: 0.20s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(5) { transition-delay: 0.25s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(6) { transition-delay: 0.30s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(7) { transition-delay: 0.35s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(8) { transition-delay: 0.40s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(9) { transition-delay: 0.45s; }
-      .stagger-grid.is-visible .amenity-card:nth-child(10) { transition-delay: 0.50s; }
-
-      /* Quick Summary Fallback */
-      .lottie-container {
+      /* Quick Summary Video Styling */
+      .qs-video-container {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(var(--accent), 0.1);
+        border: 1px solid rgba(var(--accent), 0.2);
         display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
       }
-      .fallback-icon {
-        display: none;
+
+      @media (min-width: 768px) {
+        .qs-video-container {
+          width: 64px;
+          height: 64px;
+        }
+      }
+
+      .group:hover .qs-video-container {
+        transform: scale(1.04);
+        box-shadow: 0 0 20px rgba(var(--accent), 0.3);
+      }
+
+      .qs-video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* Locations Grid Styles */
+      .loc-card {
+        background-color: rgb(var(--bg-surface));
+        border: 1px solid rgb(var(--border));
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        cursor: default;
+      }
+      .loc-card:hover, .loc-card:focus-visible {
+        transform: translateY(-4px);
+        border-color: rgb(var(--accent));
+        box-shadow: 0 15px 30px -5px rgba(var(--accent), 0.15);
+        outline: none;
+      }
+      .loc-media {
+        height: 140px;
+        background: linear-gradient(135deg, rgba(var(--accent), 0.05) 0%, rgba(var(--bg-surface), 0.5) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        border-bottom: 1px solid rgb(var(--border));
+        transition: background 0.5s ease, transform 0.5s ease;
+      }
+      .loc-card:hover .loc-media {
+        background: linear-gradient(135deg, rgba(var(--accent), 0.1) 0%, rgba(var(--bg-surface), 0.8) 100%);
+        transform: scale(1.02);
+      }
+      .loc-title {
+        font-weight: 700;
+        color: rgb(var(--text-main));
+        margin-bottom: 0.25rem;
+      }
+      .loc-tag {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        color: rgb(var(--accent));
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .amenity-card, .amenity-icon, .stagger-grid .amenity-card {
-          transition: none !important;
-          animation: none !important;
-          opacity: 1 !important;
-          transform: none !important;
-        }
-        .amenity-card:hover { transform: none; }
-        
-        lottie-player {
-          display: none !important;
-        }
-        .fallback-icon {
-          display: block;
-        }
+        .group:hover .qs-video-container { transform: none; }
+        .amenity-card, .loc-card { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; }
       }
-      /* --- AMENITY CARDS END --- */
+
+      .stagger-grid.is-visible *:nth-child(1) { transition-delay: 0.05s; }
+      .stagger-grid.is-visible *:nth-child(2) { transition-delay: 0.10s; }
+      .stagger-grid.is-visible *:nth-child(3) { transition-delay: 0.15s; }
+      .stagger-grid.is-visible *:nth-child(4) { transition-delay: 0.20s; }
+      .stagger-grid.is-visible *:nth-child(5) { transition-delay: 0.25s; }
+      .stagger-grid.is-visible *:nth-child(6) { transition-delay: 0.30s; }
+      .stagger-grid.is-visible *:nth-child(7) { transition-delay: 0.35s; }
+      .stagger-grid.is-visible *:nth-child(8) { transition-delay: 0.40s; }
+      .stagger-grid.is-visible *:nth-child(9) { transition-delay: 0.45s; }
+      .stagger-grid.is-visible *:nth-child(10) { transition-delay: 0.50s; }
     </style>
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
 
- <!-- Navbar -->
+   <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         
@@ -297,48 +345,44 @@
         </a>
 
         <!-- Desktop Nav -->
-        <nav class="hidden md:flex items-center gap-6">
+        <nav class="hidden md:flex items-center gap-8">
           <a href="index.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Home</a>
-          <a href="about.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">About</a>
+          <a href="about.html" class="text-sm font-semibold text-brand-accent transition-colors" aria-current="page">About</a>
           <a href="gallery.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Gallery</a>
-          <a href="facilities.html" class="text-sm font-semibold text-brand-accent transition-colors" aria-current="page">Facilities</a>
+          <a href="facilities.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Facilities</a>
           <a href="contact.html" class="text-sm font-medium text-brand-muted hover:text-brand-accent transition-colors">Contact</a>
           
-          <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme">
-            <!-- Icons injected by JS -->
-          </button>
+          <button id="theme-toggle" class="p-2 rounded-full text-brand-muted hover:text-brand-accent hover:bg-brand-surface transition-colors" aria-label="Toggle theme"></button>
 
-          <a href="contact.html" class="px-5 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded hover:opacity-90 transition-all shadow-[0_0_15px_rgba(var(--accent)/0.3)]">
+          <a href="contact.html" class="px-6 py-2.5 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-[0_4px_14px_0_rgba(var(--accent),0.39)] hover:shadow-[0_6px_20px_rgba(var(--accent),0.23)] hover:-translate-y-0.5 transition-all">
             Check Availability
           </a>
         </nav>
 
         <!-- Mobile Controls -->
         <div class="flex items-center gap-4 md:hidden">
-          <button id="theme-toggle-mobile" class="p-2 text-brand-muted hover:text-brand-accent focus:outline-none">
-             <!-- Icons injected by JS -->
-          </button>
+          <button id="theme-toggle-mobile" class="p-2 text-brand-muted hover:text-brand-accent focus:outline-none"></button>
           <button id="menu-toggle" class="text-brand-text hover:text-brand-accent focus:outline-none p-2" aria-label="Toggle menu">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
       </div>
 
       <!-- Mobile Menu -->
       <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" id="mobile-menu-overlay"></div>
-        <div class="absolute top-[60px] right-0 w-64 h-[calc(100vh-60px)] bg-brand-surface border-l border-brand-border flex flex-col p-6 space-y-6 shadow-2xl transition-colors duration-300">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+        <div class="absolute top-[70px] right-0 w-72 h-[calc(100vh-70px)] bg-brand-surface border-l border-brand-border flex flex-col p-8 space-y-6 shadow-2xl transition-all duration-300">
           <a href="index.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Home</a>
-          <a href="about.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">About</a>
+          <a href="about.html" class="text-lg font-bold text-brand-accent">About</a>
           <a href="gallery.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Gallery</a>
-          <a href="facilities.html" class="text-lg font-bold text-brand-accent">Facilities</a>
+          <a href="facilities.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Facilities</a>
           <a href="contact.html" class="text-lg font-medium text-brand-text hover:text-brand-accent">Contact</a>
           <a href="contact.html" class="w-full text-center px-5 py-3 text-sm font-bold bg-brand-accent text-white dark:text-slate-950 rounded shadow-lg">Check Availability</a>
         </div>
       </div>
     </header>
 
-    <main class="flex-grow pt-24 pb-12">
+    <main class="flex-grow">
       
       <!-- Hero Section -->
       <section class="container mx-auto px-6 max-w-7xl mb-20 fade-in-section">
@@ -357,21 +401,16 @@
           <!-- Premium Quick Summary Card -->
           <div class="lg:col-span-5">
             <div class="bg-brand-surface border border-brand-border rounded-2xl shadow-2xl relative overflow-hidden flex flex-col sm:flex-row h-full group hover:shadow-brand-accent/10 transition-shadow duration-500">
-               <!-- Animation Column (Checklist Animation) -->
-               <div class="relative w-full sm:w-2/5 min-h-[180px] bg-gradient-to-br from-brand-accent/5 via-brand-surface to-brand-accent/10 flex items-center justify-center p-4 lottie-container">
-                  <lottie-player
-                    src="https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"
-                    background="transparent"
-                    speed="1"
-                    style="width:100%;height:220px;"
-                    loop
-                    autoplay>
-                  </lottie-player>
-                  
-                  <!-- Reduced Motion Fallback -->
-                  <div class="fallback-icon">
-                    <svg class="w-16 h-16 text-brand-accent opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+               
+               <!-- Visual Column (Video Container) -->
+               <div class="relative w-full sm:w-2/5 min-h-[160px] sm:min-h-auto flex items-center justify-center p-6 bg-brand-dark/5" aria-hidden="true">
+                  <div class="qs-video-container">
+                    <video autoplay loop muted playsinline preload="metadata">
+                      <source src="/assets/video/kitchen-counter.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
+                  <div class="absolute inset-0 bg-radial-gradient from-brand-accent/5 to-transparent pointer-events-none"></div>
                </div>
 
                <!-- Bullets Column -->
@@ -408,8 +447,6 @@
       <section class="container mx-auto px-6 max-w-7xl mb-24 fade-in-section stagger-grid">
         <h2 class="text-3xl font-bold text-brand-text mb-10">Premium Amenities</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          <!-- Card 1: Fully Furnished -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -420,8 +457,6 @@
             <h3 class="amenity-title">Fully Furnished</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Tastefully designed interiors with comfortable seating and premium bedding.</p>
           </div>
-
-          <!-- Card 2: High Speed Wifi -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -432,8 +467,6 @@
             <h3 class="amenity-title">High-Speed Wi-Fi</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Reliable fiber optic connectivity for remote work or uninterrupted streaming.</p>
           </div>
-
-          <!-- Card 3: AC -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -444,8 +477,6 @@
             <h3 class="amenity-title">Air Conditioning</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Efficient Split AC units installed in every apartment for optimal climate control.</p>
           </div>
-
-          <!-- Card 4: Housekeeping -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -456,8 +487,6 @@
             <h3 class="amenity-title">Daily Housekeeping</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Our staff ensures your living space remains spotless, hygienic, and fresh daily.</p>
           </div>
-
-          <!-- Card 5: Kitchenette -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -468,8 +497,6 @@
             <h3 class="amenity-title">Kitchenette</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Includes Fridge, Microwave, and Stove. Perfect for light cooking and reheating.</p>
           </div>
-
-          <!-- Card 6: Smart TV -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -480,8 +507,6 @@
             <h3 class="amenity-title">Smart TV</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Direct access to Netflix, YouTube, and digital channels from your lounge.</p>
           </div>
-
-          <!-- Card 7: Bath -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -492,8 +517,6 @@
             <h3 class="amenity-title">Attached Bath</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Modern sanitary fittings with an electric geyser providing instant hot water.</p>
           </div>
-
-          <!-- Card 8: Water -->
           <div class="amenity-card group" tabindex="0">
             <div class="flex justify-between items-start">
               <div class="amenity-icon">
@@ -501,108 +524,67 @@
               </div>
               <span class="amenity-meta">Utility</span>
             </div>
-            <h3 class="amenity-title">24/7 Sweet Water</h3>
+            <h3 class="amenity-title">24/7 Water</h3>
             <p class="text-sm text-brand-muted leading-relaxed">Continuous supply of clean water without shortages, a luxury in itself.</p>
           </div>
-
-          <!-- Card 9: Electric Kettle -->
-          <div class="amenity-card group" tabindex="0">
-            <div class="flex justify-between items-start">
-              <div class="amenity-icon">
-                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12h-3m3 0a3 3 0 11-6 0 3 3 0 016 0zm-9 0V7a3 3 0 013-3h3a3 3 0 013 3v5M3 13l2.82 5.08a2 2 0 001.75 1.03h8.86a2 2 0 001.75-1.03L21 13" /></svg>
-              </div>
-              <span class="amenity-meta">Kitchen</span>
-            </div>
-            <h3 class="amenity-title">Electric Kettle</h3>
-            <p class="text-sm text-brand-muted leading-relaxed">Prepare tea or coffee anytime with a dedicated electric kettle in your kitchenette.</p>
-          </div>
-
-          <!-- Card 10: Iron -->
-          <div class="amenity-card group" tabindex="0">
-            <div class="flex justify-between items-start">
-              <div class="amenity-icon">
-                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 19H5m14 0l-2-10a2 2 0 00-2-1.7h-7a2 2 0 00-2 1.7L6 19m13 0h2" /></svg>
-              </div>
-              <span class="amenity-meta">Service</span>
-            </div>
-            <h3 class="amenity-title">Iron & Board</h3>
-            <p class="text-sm text-brand-muted leading-relaxed">Look your best for meetings or outings.</p>
-          </div>
-
         </div>
       </section>
 
-      <!-- Utilities & Comfort Split -->
-      <section class="bg-brand-surface border-y border-brand-border py-20 fade-in-section transition-colors duration-300">
-        <div class="container mx-auto px-6 max-w-7xl">
-          <div class="grid md:grid-cols-2 gap-16">
-            
-            <!-- Column 1 -->
-            <div>
-              <h3 class="text-2xl font-bold text-brand-text mb-6 pb-4 border-b border-brand-border">Utilities</h3>
-              <ul class="space-y-4">
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
-                  <span class="text-brand-text font-medium">24/7 Sweet Water Supply</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
-                  <span class="text-brand-text font-medium">Electric Geyser (Hot Water)</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
-                  <span class="text-brand-text font-medium">Powerful Air Conditioning</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-accent"></div>
-                  <span class="text-brand-text font-medium">Secure Entrance</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 2 -->
-            <div>
-              <h3 class="text-2xl font-bold text-brand-text mb-6 pb-4 border-b border-brand-border">Comfort & Living</h3>
-              <ul class="space-y-4">
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
-                  <span class="text-brand-text font-medium">Spacious Lounge Area</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
-                  <span class="text-brand-text font-medium">Kitchenette (Fridge, Microwave, Stove)</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
-                  <span class="text-brand-text font-medium">Modern Attached Bathroom</span>
-                </li>
-                <li class="flex items-center gap-3">
-                  <div class="w-2 h-2 rounded-full bg-brand-highlight"></div>
-                  <span class="text-brand-text font-medium">Smart TV Entertainment</span>
-                </li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- For Who This Works Best -->
+      <!-- Nearby Landmarks Section -->
       <section class="container mx-auto px-6 max-w-7xl py-24 fade-in-section">
-        <h2 class="text-center text-3xl font-bold text-brand-text mb-12">Who Stays With Us?</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
-            <h3 class="text-xl font-bold text-brand-text mb-2">Families</h3>
-            <p class="text-brand-muted text-sm">Safe, private, and hygienic environment for peace of mind.</p>
-          </div>
-          <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
-            <h3 class="text-xl font-bold text-brand-text mb-2">Tourists</h3>
-            <p class="text-brand-muted text-sm">Central DHA location near Sea View for easy exploration.</p>
-          </div>
-          <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
-            <h3 class="text-xl font-bold text-brand-text mb-2">Corporate Guests</h3>
-            <p class="text-brand-muted text-sm">A quiet retreat that feels like home, better than a hotel.</p>
-          </div>
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-brand-text mb-4">Nearby Landmarks</h2>
+          <p class="text-brand-muted max-w-2xl mx-auto">Centrally located in DHA, giving you quick access to the city's best shopping, dining, and healthcare.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🛍️</div>
+             <div class="p-5"><h3 class="loc-title">Dolmen Mall Clifton</h3><p class="loc-tag">Shopping & Cinema</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🌊</div>
+             <div class="p-5"><h3 class="loc-title">Sea View Beach</h3><p class="loc-tag">Leisure</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍽️</div>
+             <div class="p-5"><h3 class="loc-title">Clock Tower Restaurant</h3><p class="loc-tag">Fine Dining</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🥘</div>
+             <div class="p-5"><h3 class="loc-title">Chaupal Seaview</h3><p class="loc-tag">Buffet Dining</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍔</div>
+             <div class="p-5"><h3 class="loc-title">McDonald's Clifton</h3><p class="loc-tag">Fast Food</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍗</div>
+             <div class="p-5"><h3 class="loc-title">KFC Clifton</h3><p class="loc-tag">Fast Food</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍢</div>
+             <div class="p-5"><h3 class="loc-title">Kolachi Do Derya</h3><p class="loc-tag">Seaside Dining</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🌶️</div>
+             <div class="p-5"><h3 class="loc-title">Dasnumberi</h3><p class="loc-tag">Local Cuisine</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">💪</div>
+             <div class="p-5"><h3 class="loc-title">Trifit Gym</h3><p class="loc-tag">Fitness Club</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🏥</div>
+             <div class="p-5"><h3 class="loc-title">Ziauddin Hospital</h3><p class="loc-tag">Clifton Campus</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🩺</div>
+             <div class="p-5"><h3 class="loc-title">South City Hospital</h3><p class="loc-tag">Healthcare</p></div>
+          </article>
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🚑</div>
+             <div class="p-5"><h3 class="loc-title">OMI Hospital</h3><p class="loc-tag">DHA Branch</p></div>
+          </article>
         </div>
       </section>
 
@@ -664,86 +646,55 @@
       </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/923068230101" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group" aria-label="Chat on WhatsApp">
-      <svg class="w-8 h-8 text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
-    </a>
-
-    <!-- Application Logic -->
+    <!-- Logic -->
     <script>
-      // DOM Elements
-      const html = document.documentElement;
-      const toggleBtns = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
-      const menuBtn = document.getElementById('menu-toggle');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuOverlay = document.getElementById('mobile-menu-overlay');
       const navbar = document.getElementById('navbar');
-      const yearSpan = document.getElementById('year');
-
-      // Theme Icons
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuBtn = document.getElementById('menu-toggle');
+      const overlay = document.getElementById('mobile-menu-overlay');
+      const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
+      
+      let theme = localStorage.getItem('theme') || 'light';
       const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
       const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
 
-      // State
-      let theme = localStorage.getItem('theme') || 'light';
-
-      // Init Theme UI
-      function updateThemeUI() {
-        toggleBtns.forEach(btn => {
-          if(!btn) return;
-          btn.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
-          btn.title = theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode";
-          btn.setAttribute('aria-pressed', theme === 'dark');
-        });
-        html.dataset.theme = theme;
-      }
-
-      // Toggle Logic
-      function toggleTheme() {
-        theme = theme === 'dark' ? 'light' : 'dark';
+      function updateTheme() {
+        document.documentElement.dataset.theme = theme;
         localStorage.setItem('theme', theme);
-        updateThemeUI();
+        themeToggles.forEach(btn => {
+          if(btn) btn.innerHTML = theme === 'dark' ? sunIcon : moonIcon;
+        });
       }
+      themeToggles.forEach(btn => btn?.addEventListener('click', () => {
+        theme = theme === 'dark' ? 'light' : 'dark';
+        updateTheme();
+      }));
+      updateTheme();
 
-      toggleBtns.forEach(btn => {
-        if(btn) btn.addEventListener('click', toggleTheme);
-      });
-      updateThemeUI();
-
-      // Navbar Scroll
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-          navbar.classList.add('bg-brand-dark/90', 'backdrop-blur-md', 'border-brand-border', 'py-3');
+        if(window.scrollY > 20) {
+          navbar.classList.add('bg-brand-dark/95', 'backdrop-blur-md', 'border-brand-border', 'shadow-sm', 'py-3');
           navbar.classList.remove('py-5', 'border-transparent');
         } else {
-          navbar.classList.remove('bg-brand-dark/90', 'backdrop-blur-md', 'border-brand-border', 'py-3');
+          navbar.classList.remove('bg-brand-dark/95', 'backdrop-blur-md', 'border-brand-border', 'shadow-sm', 'py-3');
           navbar.classList.add('py-5', 'border-transparent');
         }
       });
 
-      // Mobile Menu
-      function toggleMenu() {
-        mobileMenu.classList.toggle('hidden');
-      }
-      if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
-      if(menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) mobileMenu.classList.add('hidden');
-      });
+      const toggleMenu = () => mobileMenu.classList.toggle('hidden');
+      menuBtn?.addEventListener('click', toggleMenu);
+      overlay?.addEventListener('click', toggleMenu);
 
-      // Footer Year
-      if(yearSpan) yearSpan.textContent = new Date().getFullYear();
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-      // Animations
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
           }
         });
-      }, { threshold: 0.1 });
+      }, {threshold: 0.1});
       document.querySelectorAll('.fade-in-section, .stagger-grid').forEach(el => observer.observe(el));
-
     </script>
   </body>
 </html>
