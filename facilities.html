@@ -3,29 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Facilities | Beach View Stays - Premium Amenities in DHA</title>
-    <meta name="description" content="Discover the amenities at Beach View Stays. Fully furnished apartments with AC, WiFi, Kitchenette, 24/7 water, and daily housekeeping in DHA Karachi." />
+    <title>Facilities | BeachViewStays.pk - Premium Amenities in DHA</title>
+    <meta name="description" content="Discover the amenities at BeachViewStays.pk. Fully furnished apartments with AC, WiFi, Kitchenette, 24/7 water, and daily housekeeping in DHA Karachi." />
     <link rel="canonical" href="https://beachviewstays.pk/facilities" />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://beachviewstays.pk/facilities" />
-    <meta property="og:title" content="Facilities | Beach View Stays" />
+    <meta property="og:title" content="Facilities | BeachViewStays.pk" />
     <meta property="og:description" content="Everything you need for a smooth stay. WiFi, AC, Kitchenette, and more." />
     <meta property="og:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Facilities | Beach View Stays" />
+    <meta name="twitter:title" content="Facilities | BeachViewStays.pk" />
     <meta name="twitter:description" content="Premium amenities for short and long stays in DHA Karachi." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LodgingBusiness",
-        "name": "BeachViewStays",
+        "name": "BeachViewStays.pk",
         "description": "Premium serviced 1-bedroom apartments near the beach in DHA Karachi.",
         "url": "https://beachviewstays.pk/facilities",
         "telephone": "+923068230101",
@@ -36,7 +39,7 @@
           "addressRegion": "Karachi",
           "addressCountry": "PK"
         },
-        "numberOfRooms": multiple,
+        "numberOfRooms": 5,
         "amenityFeature": [
             { "@type": "LocationFeatureSpecification", "name": "High-speed Wi-Fi", "value": true },
             { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
@@ -53,8 +56,8 @@
       (function() {
         try {
           const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+          // Default to light if no preference is saved
+          if (savedTheme === 'dark') {
             document.documentElement.dataset.theme = 'dark';
           } else {
             document.documentElement.dataset.theme = 'light';
@@ -127,12 +130,155 @@
         opacity: 1;
         transform: none;
       }
-      
-      /* Micro-interactions */
-      .facility-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 30px -10px rgba(var(--accent), 0.15);
+
+      /* --- AMENITY CARDS START --- */
+      .amenity-card {
+        position: relative;
+        background-color: rgb(var(--bg-surface));
+        border: 1px solid rgb(var(--border));
+        border-radius: 1rem;
+        padding: 1.75rem;
+        overflow: hidden;
+        cursor: default;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                    box-shadow 0.4s ease, 
+                    border-color 0.3s ease;
       }
+
+      /* Animated Sheen Effect */
+      .amenity-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(var(--accent), 0.05) 50%,
+          transparent 100%
+        );
+        transform: skewX(-25deg);
+        pointer-events: none;
+        transition: left 0s;
+      }
+
+      .amenity-card:hover::before {
+        left: 150%;
+        transition: left 0.7s ease-in-out;
+      }
+
+      .amenity-card:hover, .amenity-card:focus-visible {
+        transform: translateY(-5px);
+        border-color: rgba(var(--accent), 0.4);
+        box-shadow: 0 20px 40px -10px rgba(var(--accent), 0.15);
+        outline: none;
+      }
+
+      .amenity-card:active {
+        transform: scale(0.98);
+      }
+
+      /* Icon Styling - Premium Agency Look */
+      .amenity-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 1rem;
+        /* Premium Default State: Colored background tint and accent color icon */
+        background-color: rgba(var(--accent), 0.08); 
+        color: rgb(var(--accent));
+        border: 1px solid rgba(var(--accent), 0.15);
+        box-shadow: 0 4px 10px -2px rgba(var(--accent), 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-bottom: 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Hover State: High contrast flip */
+      .amenity-card:hover .amenity-icon {
+        background-color: rgb(var(--accent));
+        color: rgb(var(--bg-surface)); /* White/Surface icon on hover */
+        border-color: transparent;
+        transform: scale(1.1) rotate(3deg);
+        box-shadow: 0 10px 20px -5px rgba(var(--accent), 0.4);
+      }
+
+      .amenity-title {
+        font-size: 1.25rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: rgb(var(--text-main));
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+      }
+      
+      .amenity-card:hover .amenity-title {
+        color: rgb(var(--accent));
+      }
+
+      .amenity-meta {
+        font-size: 0.65rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: rgb(var(--accent));
+        background-color: rgba(var(--accent), 0.1);
+        padding: 0.35rem 0.75rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(var(--accent), 0.2);
+      }
+
+      /* Staggered Reveal Animation */
+      .stagger-grid .amenity-card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+      
+      .stagger-grid.is-visible .amenity-card {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .stagger-grid.is-visible .amenity-card:nth-child(1) { transition-delay: 0.05s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(2) { transition-delay: 0.10s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(3) { transition-delay: 0.15s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(4) { transition-delay: 0.20s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(5) { transition-delay: 0.25s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(6) { transition-delay: 0.30s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(7) { transition-delay: 0.35s; }
+      .stagger-grid.is-visible .amenity-card:nth-child(8) { transition-delay: 0.40s; }
+
+      /* Quick Summary Fallback */
+      .lottie-container {
+        display: flex;
+      }
+      .fallback-icon {
+        display: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .amenity-card, .amenity-icon, .stagger-grid .amenity-card {
+          transition: none !important;
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .amenity-card:hover { transform: none; }
+        
+        lottie-player {
+          display: none !important;
+        }
+        .fallback-icon {
+          display: block;
+        }
+      }
+      /* --- AMENITY CARDS END --- */
     </style>
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
@@ -194,26 +340,62 @@
       <!-- Hero Section -->
       <section class="container mx-auto px-6 max-w-7xl mb-20 fade-in-section">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-8">
+          <div class="lg:col-span-7">
             <span class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-wider text-brand-accent uppercase border border-brand-accent/30 rounded-full bg-brand-accent/5">Facilities</span>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-brand-text mb-6">
               Everything you need <br />
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-500">for a smooth stay.</span>
             </h1>
             <p class="text-lg text-brand-muted leading-relaxed max-w-2xl border-l-2 border-brand-border pl-6">
-              Our multiple exclusive units in DHA Karachi are equipped to serve short-term travelers and families who value privacy, hygiene, and premium utilities.
+              Our 5 exclusive units in DHA Karachi are equipped to serve short-term travelers and families who value privacy, hygiene, and premium utilities.
             </p>
           </div>
           
-          <!-- Quick Summary Card -->
-          <div class="lg:col-span-4">
-            <div class="bg-brand-surface border border-brand-border rounded-2xl p-6 shadow-xl relative overflow-hidden">
-               <h3 class="text-sm font-bold text-brand-text uppercase tracking-widest mb-4">Quick Summary</h3>
-               <div class="flex flex-wrap gap-2">
-                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">High-speed Wi-Fi</span>
-                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">Housekeeping</span>
-                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">Kitchenette</span>
-                 <span class="px-3 py-1.5 bg-brand-dark rounded-md text-xs font-medium text-brand-muted border border-brand-border">Secure & Peaceful</span>
+          <!-- Premium Quick Summary Card -->
+          <div class="lg:col-span-5">
+            <div class="bg-brand-surface border border-brand-border rounded-2xl shadow-2xl relative overflow-hidden flex flex-col sm:flex-row h-full group hover:shadow-brand-accent/10 transition-shadow duration-500">
+               <!-- Animation Column -->
+               <div class="relative w-full sm:w-2/5 min-h-[180px] bg-gradient-to-br from-brand-accent/5 via-brand-surface to-brand-accent/10 flex items-center justify-center p-4 lottie-container">
+                  <lottie-player 
+                    src="https://lottie.host/8022839e-4c55-4422-902e-c7207043869d/default.json" 
+                    background="transparent" 
+                    speed="1" 
+                    style="width: 100%; height: 100%; max-width: 120px;" 
+                    loop 
+                    autoplay
+                    aria-label="Animation representing comfort and hospitality"
+                  ></lottie-player>
+                  
+                  <!-- Reduced Motion Fallback -->
+                  <div class="fallback-icon">
+                    <svg class="w-16 h-16 text-brand-accent opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  </div>
+               </div>
+
+               <!-- Bullets Column -->
+               <div class="p-6 w-full sm:w-3/5 flex flex-col justify-center">
+                 <h3 class="text-sm font-bold text-brand-text uppercase tracking-widest mb-4 flex items-center gap-2">
+                    Quick Summary
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                 </h3>
+                 <ul class="space-y-3">
+                   <li class="flex items-center gap-3">
+                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xs font-bold">✓</span>
+                     <span class="text-sm font-medium text-brand-muted">High-speed Wi-Fi</span>
+                   </li>
+                   <li class="flex items-center gap-3">
+                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xs font-bold">✓</span>
+                     <span class="text-sm font-medium text-brand-muted">Daily Housekeeping</span>
+                   </li>
+                   <li class="flex items-center gap-3">
+                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xs font-bold">✓</span>
+                     <span class="text-sm font-medium text-brand-muted">Kitchenette</span>
+                   </li>
+                   <li class="flex items-center gap-3">
+                     <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/10 text-brand-accent flex items-center justify-center text-xs font-bold">✓</span>
+                     <span class="text-sm font-medium text-brand-muted">Secure & Peaceful</span>
+                   </li>
+                 </ul>
                </div>
             </div>
           </div>
@@ -221,88 +403,104 @@
       </section>
 
       <!-- Core Facilities Grid -->
-      <section class="container mx-auto px-6 max-w-7xl mb-24 fade-in-section">
+      <section class="container mx-auto px-6 max-w-7xl mb-24 fade-in-section stagger-grid">
         <h2 class="text-3xl font-bold text-brand-text mb-10">Premium Amenities</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          <!-- Card 1 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">🛋️</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Included</span>
+          <!-- Card 1: Fully Furnished -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 12V8H6a2 2 0 01-2-2 2 2 0 012-2h12v4" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 10v10a1 1 0 001 1h3m10-11v10a1 1 0 001 1h3" /></svg>
+              </div>
+              <span class="amenity-meta">Included</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">Fully Furnished</h3>
-            <p class="text-sm text-brand-muted">Tastefully designed interiors with comfortable seating and bedding.</p>
+            <h3 class="amenity-title">Fully Furnished</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Tastefully designed interiors with comfortable seating and premium bedding.</p>
           </div>
 
-          <!-- Card 2 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">📶</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Utility</span>
+          <!-- Card 2: High Speed Wifi -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>
+              </div>
+              <span class="amenity-meta">Utility</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">High-Speed Wi-Fi</h3>
-            <p class="text-sm text-brand-muted">Reliable connectivity for remote work or streaming entertainment.</p>
+            <h3 class="amenity-title">High-Speed Wi-Fi</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Reliable fiber optic connectivity for remote work or uninterrupted streaming.</p>
           </div>
 
-          <!-- Card 3 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">❄️</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Comfort</span>
+          <!-- Card 3: AC -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" /></svg>
+              </div>
+              <span class="amenity-meta">Comfort</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">Air Conditioning</h3>
-            <p class="text-sm text-brand-muted">Efficient Split ACs installed in every unit for your comfort.</p>
+            <h3 class="amenity-title">Air Conditioning</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Efficient Split AC units installed in every apartment for optimal climate control.</p>
           </div>
 
-          <!-- Card 4 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">🧹</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Service</span>
+          <!-- Card 4: Housekeeping -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+              </div>
+              <span class="amenity-meta">Service</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">Daily Housekeeping</h3>
-            <p class="text-sm text-brand-muted">Our staff ensures your space remains spotless and hygienic.</p>
+            <h3 class="amenity-title">Daily Housekeeping</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Our staff ensures your living space remains spotless, hygienic, and fresh daily.</p>
           </div>
 
-          <!-- Card 5 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">🍳</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Utility</span>
+          <!-- Card 5: Kitchenette -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+               <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.75 3v13.5M9.75 3v13.5m-3-13.5v13.5m10.5-9.75h-15m15 3.75h-15m15 3.75h-15M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5" /></svg>
+              </div>
+              <span class="amenity-meta">Utility</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">Kitchenette</h3>
-            <p class="text-sm text-brand-muted">Equipped with Fridge, Microwave, and Stove for light cooking.</p>
+            <h3 class="amenity-title">Kitchenette</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Includes Fridge, Microwave, and Stove. Perfect for light cooking and reheating.</p>
           </div>
 
-          <!-- Card 6 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">📺</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Media</span>
+          <!-- Card 6: Smart TV -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+              <span class="amenity-meta">Media</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">Smart TV</h3>
-            <p class="text-sm text-brand-muted">Access Netflix, YouTube, and more directly from your lounge.</p>
+            <h3 class="amenity-title">Smart TV</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Direct access to Netflix, YouTube, and digital channels from your lounge.</p>
           </div>
 
-          <!-- Card 7 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">🚿</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Comfort</span>
+          <!-- Card 7: Bath -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 21v-8H7v8M9 3v5h6V3" /></svg>
+              </div>
+              <span class="amenity-meta">Comfort</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">Attached Bath</h3>
-            <p class="text-sm text-brand-muted">Modern fittings with an electric geyser for instant hot water.</p>
+            <h3 class="amenity-title">Attached Bath</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Modern sanitary fittings with an electric geyser providing instant hot water.</p>
           </div>
 
-          <!-- Card 8 -->
-          <div class="facility-card p-6 bg-brand-surface border border-brand-border rounded-xl transition-all">
-            <div class="flex justify-between items-start mb-4">
-              <span class="text-2xl">💧</span>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-brand-accent bg-brand-accent/10 px-2 py-1 rounded-full">Utility</span>
+          <!-- Card 8: Water -->
+          <div class="amenity-card group" tabindex="0">
+            <div class="flex justify-between items-start">
+              <div class="amenity-icon">
+                <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>
+              </div>
+              <span class="amenity-meta">Utility</span>
             </div>
-            <h3 class="text-lg font-bold text-brand-text mb-2">24/7 Sweet Water</h3>
-            <p class="text-sm text-brand-muted">Continuous line water supply. No shortages, no hassle.</p>
+            <h3 class="amenity-title">24/7 Sweet Water</h3>
+            <p class="text-sm text-brand-muted leading-relaxed">Continuous supply of clean water without shortages, a luxury in itself.</p>
           </div>
 
         </div>
@@ -376,7 +574,7 @@
             <p class="text-brand-muted text-sm">Central DHA location near Sea View for easy exploration.</p>
           </div>
           <div class="p-8 text-center bg-brand-dark/30 rounded-2xl border border-brand-border">
-            <h3 class="text-xl font-bold text-brand-text mb-2">Corporate Guests</h3>
+            <h3 class="text-xl font-bold text-brand-text mb-2">Privacy Seekers</h3>
             <p class="text-brand-muted text-sm">A quiet retreat that feels like home, better than a hotel.</p>
           </div>
         </div>
@@ -461,7 +659,7 @@
       const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
 
       // State
-      let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      let theme = localStorage.getItem('theme') || 'light';
 
       // Init Theme UI
       function updateThemeUI() {
@@ -518,7 +716,7 @@
           }
         });
       }, { threshold: 0.1 });
-      document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+      document.querySelectorAll('.fade-in-section, .stagger-grid').forEach(el => observer.observe(el));
 
     </script>
   </body>
