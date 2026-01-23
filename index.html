@@ -18,7 +18,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Beach View Stays | DHA Karachi Apartments" />
-    <meta name="twitter:description" content="Short & long term stays. 5 exclusive units. 24/7 service." />
+    <meta name="twitter:description" content="Short & long term stays. Multiple exclusive units. 24/7 service." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/hero-1.jpg" />
 
     <!-- Schema.org JSON-LD -->
@@ -26,7 +26,7 @@
       {
         "@context": "https://schema.org",
         "@type": "LodgingBusiness",
-        "name": "BeachViewStays",
+        "name": "Beach View Stays",
         "url": "https://beachviewstays.pk/",
         "telephone": "+923068230101",
         "email": "karachi.apartments@gmail.com",
@@ -41,18 +41,16 @@
       }
     </script>
     
-    <!-- Theme Script -->
+    <!-- Theme Script: Default to Light -->
     <script>
       (function() {
         try {
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.documentElement.dataset.theme = 'dark';
-          } else {
-            document.documentElement.dataset.theme = 'light';
-          }
-        } catch (e) {}
+          var savedTheme = localStorage.getItem('theme');
+          var theme = savedTheme === 'dark' ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
       })();
     </script>
 
@@ -99,7 +97,7 @@
         --border: 30 41 59;        /* Slate 800 */
         --accent: 45 212 191;      /* Teal 400 */
         --highlight: 244 63 94;    /* Rose 500 */
-      }q
+      }
       body { transition: color 0.3s, background-color 0.3s; }
       *, *::before, *::after { border-color: rgb(var(--border)); }
       html { scroll-behavior: smooth; }
@@ -127,11 +125,47 @@
         opacity: 1;
         transform: none;
       }
+
+      /* Premium Icon Styling (Shared with Facilities) */
+      .amenity-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 1rem;
+        background-color: rgba(var(--accent), 0.1); 
+        color: rgb(var(--accent));
+        border: 1px solid rgba(var(--accent), 0.2);
+        box-shadow: 0 4px 10px -2px rgba(var(--accent), 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        margin-bottom: 1.25rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Hover Interaction */
+      .group:hover .amenity-icon {
+        background-color: rgb(var(--accent));
+        color: rgb(var(--bg-surface));
+        border-color: transparent;
+        transform: scale(1.1) rotate(3deg);
+        box-shadow: 0 10px 20px -5px rgba(var(--accent), 0.4);
+      }
     </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
 </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
     
-    <!-- Navbar -->
+ <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         
@@ -203,11 +237,17 @@
         </div>
 
         <!-- Carousel -->
-        <div class="order-1 md:order-2 relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-accent/10 border border-brand-border bg-brand-surface fade-in-section">
+        <div class="order-1 md:order-2 relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-accent/10 border border-brand-border bg-brand-surface fade-in-section group touch-pan-y" id="hero-carousel">
           <div id="carousel-track" class="absolute inset-0 w-full h-full">
             <img src="/assets/hero-1.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100" alt="Apartment View 1">
             <img src="/assets/hero-2.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" alt="Apartment View 2">
             <img src="/assets/hero-3.jpg" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" alt="Apartment View 3">
+          </div>
+          <!-- Dots -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20" id="carousel-dots">
+            <button class="w-2.5 h-2.5 rounded-full bg-brand-accent transition-all w-8" aria-label="Slide 1"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 2"></button>
+            <button class="w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white transition-all" aria-label="Slide 3"></button>
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
         </div>
@@ -219,19 +259,31 @@
           <div>
             <h2 class="text-3xl md:text-4xl font-bold text-brand-text mb-2">Apartment <span class="text-brand-accent">Essentials</span></h2>
             <p class="text-brand-muted">Everything you need for a comfortable stay.</p>
-          </div>1
+          </div>
           <a href="facilities.html" class="text-brand-accent font-bold hover:underline">View All Facilities &rarr;</a>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 bg-brand-surface border border-brand-border rounded-xl hover:border-brand-accent transition-colors">
+          <!-- Card 1 -->
+          <div class="group p-6 bg-brand-surface border border-brand-border rounded-xl hover:border-brand-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="amenity-icon">
+              <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" /></svg>
+            </div>
             <h3 class="text-xl font-bold text-brand-text mb-2">High-Speed Wi-Fi</h3>
             <p class="text-brand-muted text-sm">Fiber Optic Connection ideal for remote work.</p>
           </div>
-          <div class="p-6 bg-brand-surface border border-brand-border rounded-xl hover:border-brand-accent transition-colors">
+          <!-- Card 2 -->
+          <div class="group p-6 bg-brand-surface border border-brand-border rounded-xl hover:border-brand-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="amenity-icon">
+               <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5" /></svg>
+            </div>
             <h3 class="text-xl font-bold text-brand-text mb-2">Air Conditioning</h3>
             <p class="text-brand-muted text-sm">Powerful split AC units in every apartment.</p>
           </div>
-          <div class="p-6 bg-brand-surface border border-brand-border rounded-xl hover:border-brand-accent transition-colors">
+          <!-- Card 3 -->
+          <div class="group p-6 bg-brand-surface border border-brand-border rounded-xl hover:border-brand-accent transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div class="amenity-icon">
+               <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.75 3v13.5M9.75 3v13.5m-3-13.5v13.5m10.5-9.75h-15m15 3.75h-15m15 3.75h-15M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5" /></svg>
+            </div>
             <h3 class="text-xl font-bold text-brand-text mb-2">Kitchenette</h3>
             <p class="text-brand-muted text-sm">Fridge, microwave, and stove included.</p>
           </div>
@@ -256,9 +308,9 @@
               <p class="text-brand-muted text-sm">Immaculate hygiene with daily housekeeping.</p>
             </div>
             <div class="p-8 rounded-2xl bg-brand-dark border border-brand-border text-center">
-              <div class="text-4xl mb-4">🏖️</div>
-              <h3 class="text-xl font-bold text-brand-text mb-2">Near Beach (DHA)</h3>
-              <p class="text-brand-muted text-sm">Prime location near Seaview.</p>
+              <div class="text-4xl mb-4">💼</div>
+              <h3 class="text-xl font-bold text-brand-text mb-2">Corporate Guests</h3>
+              <p class="text-brand-muted text-sm">Quiet, secure, and internet-ready for professionals.</p>
             </div>
           </div>
         </div>
@@ -286,7 +338,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
-              BeachView<span class="logo-accent">Stays</span>
+              Beach View<span class="logo-accent">Stays</span>
             </a>
             <p class="text-brand-muted text-sm mb-4">
               Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
@@ -314,7 +366,7 @@
           </div>
         </div>
         <div class="border-t border-brand-border pt-8 text-center md:text-left">
-          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> BeachViewStays.pk. All rights reserved.</p>
+          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> Beach View Stays. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -329,9 +381,9 @@
       const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
       
       // Theme Logic
-      let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
-      const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
+      let theme = localStorage.getItem('theme') || 'light';
+      const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
+      const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
 
       function updateTheme() {
         document.documentElement.dataset.theme = theme;
@@ -374,16 +426,82 @@
       }, {threshold: 0.1});
       document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
 
-      // Simple Carousel (Home Specific)
-      const slides = document.querySelectorAll('#carousel-track img');
-      let currentSlide = 0;
-      if(slides.length > 0) {
-        setInterval(() => {
-          slides[currentSlide].style.opacity = '0';
-          currentSlide = (currentSlide + 1) % slides.length;
-          slides[currentSlide].style.opacity = '1';
-        }, 4000);
-      }
+      // Enhanced Carousel with Touch Support
+      (function() {
+          const track = document.getElementById('carousel-track');
+          if(!track) return;
+          const slides = track.querySelectorAll('img');
+          const dots = document.querySelectorAll('#carousel-dots button');
+          let currentSlide = 0;
+          let interval;
+          let touchStartX = 0;
+          let touchEndX = 0;
+
+          function showSlide(index) {
+              slides.forEach((slide, i) => {
+                  slide.style.opacity = i === index ? '1' : '0';
+              });
+              dots.forEach((dot, i) => {
+                  if (i === index) {
+                      dot.classList.add('bg-brand-accent', 'w-8');
+                      dot.classList.remove('bg-white/50');
+                  } else {
+                      dot.classList.remove('bg-brand-accent', 'w-8');
+                      dot.classList.add('bg-white/50');
+                  }
+              });
+              currentSlide = index;
+          }
+
+          function nextSlide() {
+              const next = (currentSlide + 1) % slides.length;
+              showSlide(next);
+          }
+
+          function prevSlide() {
+              const prev = (currentSlide - 1 + slides.length) % slides.length;
+              showSlide(prev);
+          }
+
+          function startInterval() {
+              interval = setInterval(nextSlide, 4000);
+          }
+          
+          function resetInterval() {
+              clearInterval(interval);
+              startInterval();
+          }
+
+          // Initial start
+          if(slides.length > 0) startInterval();
+
+          // Dot clicks
+          dots.forEach((dot, i) => {
+              dot.addEventListener('click', () => {
+                  showSlide(i);
+                  resetInterval();
+              });
+          });
+
+          // Touch events for swipe
+          const container = document.getElementById('hero-carousel');
+          if(container) {
+              container.addEventListener('touchstart', e => {
+                  touchStartX = e.changedTouches[0].screenX;
+              }, {passive: true});
+
+              container.addEventListener('touchend', e => {
+                  touchEndX = e.changedTouches[0].screenX;
+                  handleSwipe();
+                  resetInterval();
+              }, {passive: true});
+          }
+
+          function handleSwipe() {
+              if (touchStartX - touchEndX > 50) nextSlide();
+              if (touchEndX - touchStartX > 50) prevSlide();
+          }
+      })();
     </script>
   </body>
 </html>
