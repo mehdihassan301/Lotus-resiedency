@@ -3,32 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Facilities | BeachViewStays.pk - Premium Amenities in DHA</title>
-    <meta name="description" content="Discover the amenities at BeachViewStays.pk. Fully furnished apartments with AC, WiFi, Kitchenette, 24/7 water, and daily housekeeping in DHA Karachi." />
+    <title>Facilities | Beach View Stays - Premium Amenities in DHA</title>
+    <meta name="description" content="Discover the amenities at Beach View Stays. Fully furnished apartments with AC, WiFi, Kitchenette, 24/7 water, and daily housekeeping in DHA Karachi." />
     <link rel="canonical" href="https://beachviewstays.pk/facilities" />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://beachviewstays.pk/facilities" />
-    <meta property="og:title" content="Facilities | BeachViewStays.pk" />
+    <meta property="og:title" content="Facilities | Beach View Stays" />
     <meta property="og:description" content="Everything you need for a smooth stay. WiFi, AC, Kitchenette, and more." />
     <meta property="og:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Facilities | BeachViewStays.pk" />
+    <meta name="twitter:title" content="Facilities | Beach View Stays" />
     <meta name="twitter:description" content="Premium amenities for short and long stays in DHA Karachi." />
     <meta name="twitter:image" content="https://beachviewstays.pk/assets/og-facilities.jpg" />
 
     <!-- Lottie Player -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "LodgingBusiness",
-        "name": "BeachViewStays.pk",
+        "name": "Beach View Stays",
         "description": "Premium serviced 1-bedroom apartments near the beach in DHA Karachi.",
         "url": "https://beachviewstays.pk/facilities",
         "telephone": "+923068230101",
@@ -53,18 +53,17 @@
       }
     </script>
     
-    <!-- Theme Initialization -->
+    <!-- Theme Script: Strictly Default to Light -->
     <script>
       (function() {
         try {
-          const savedTheme = localStorage.getItem('theme');
-          // Default to light if no preference is saved
-          if (savedTheme === 'dark') {
-            document.documentElement.dataset.theme = 'dark';
-          } else {
-            document.documentElement.dataset.theme = 'light';
-          }
-        } catch (e) {}
+          // Check local storage only. Ignore system preference to ensure Light default.
+          var savedTheme = localStorage.getItem('theme');
+          var theme = savedTheme === 'dark' ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
       })();
     </script>
 
@@ -293,7 +292,7 @@
         
          <!-- Premium Logo -->
          <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
-            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">Beach View</span>
             <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
         </a>
 
@@ -351,7 +350,7 @@
               <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-500">for a smooth stay.</span>
             </h1>
             <p class="text-lg text-brand-muted leading-relaxed max-w-2xl border-l-2 border-brand-border pl-6">
-              Our 5 exclusive units in DHA Karachi are equipped to serve short-term travelers and families who value privacy, hygiene, and premium utilities.
+              Our multiple exclusive units in DHA Karachi are equipped to serve short-term travelers and families who value privacy, hygiene, and premium utilities.
             </p>
           </div>
           
@@ -360,15 +359,14 @@
             <div class="bg-brand-surface border border-brand-border rounded-2xl shadow-2xl relative overflow-hidden flex flex-col sm:flex-row h-full group hover:shadow-brand-accent/10 transition-shadow duration-500">
                <!-- Animation Column (Checklist Animation) -->
                <div class="relative w-full sm:w-2/5 min-h-[180px] bg-gradient-to-br from-brand-accent/5 via-brand-surface to-brand-accent/10 flex items-center justify-center p-4 lottie-container">
-                  <lottie-player 
-                    src="https://assets2.lottiefiles.com/packages/lf20_1efy9h.json" 
-                    background="transparent" 
-                    speed="1" 
-                    style="width: 100%; height: 100%; max-width: 140px;" 
-                    loop 
-                    autoplay
-                    aria-label="Checklist animation symbolizing verified amenities"
-                  ></lottie-player>
+                  <lottie-player
+                    src="https://assets10.lottiefiles.com/packages/lf20_jcikwtux.json"
+                    background="transparent"
+                    speed="1"
+                    style="width:100%;height:220px;"
+                    loop
+                    autoplay>
+                  </lottie-player>
                   
                   <!-- Reduced Motion Fallback -->
                   <div class="fallback-icon">
@@ -633,7 +631,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
-              BeachView<span class="logo-accent">Stays</span>
+              Beach View <span class="logo-accent">Stays</span>
             </a>
             <p class="text-brand-muted text-sm mb-4">
               Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
@@ -661,7 +659,7 @@
           </div>
         </div>
         <div class="border-t border-brand-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> BeachViewStays.pk. All rights reserved.</p>
+          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> Beach View Stays. All rights reserved.</p>
         </div>
       </div>
     </footer>
