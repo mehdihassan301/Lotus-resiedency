@@ -136,6 +136,74 @@
         color: white;
         transform: scale(1.1) rotate(3deg);
       }
+
+      /* Locations Grid Styles */
+      .loc-card {
+        background-color: rgb(var(--bg-surface));
+        border: 1px solid rgb(var(--border));
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        cursor: default;
+      }
+      .loc-card:hover, .loc-card:focus-visible {
+        transform: translateY(-4px);
+        border-color: rgb(var(--accent));
+        box-shadow: 0 15px 30px -5px rgba(var(--accent), 0.15);
+        outline: none;
+      }
+      .loc-media {
+        height: 140px;
+        background: linear-gradient(135deg, rgba(var(--accent), 0.05) 0%, rgba(var(--bg-surface), 0.5) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        border-bottom: 1px solid rgb(var(--border));
+        transition: background 0.5s ease, transform 0.5s ease;
+      }
+      .loc-card:hover .loc-media {
+        background: linear-gradient(135deg, rgba(var(--accent), 0.1) 0%, rgba(var(--bg-surface), 0.8) 100%);
+        transform: scale(1.02);
+      }
+      .loc-title {
+        font-weight: 700;
+        color: rgb(var(--text-main));
+        margin-bottom: 0.25rem;
+      }
+      .loc-tag {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 700;
+        color: rgb(var(--accent));
+      }
+      
+      /* Stagger Animation */
+      .stagger-grid .loc-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+      .stagger-grid.is-visible .loc-card {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-grid.is-visible .loc-card:nth-child(1) { transition-delay: 0.05s; }
+      .stagger-grid.is-visible .loc-card:nth-child(2) { transition-delay: 0.10s; }
+      .stagger-grid.is-visible .loc-card:nth-child(3) { transition-delay: 0.15s; }
+      .stagger-grid.is-visible .loc-card:nth-child(4) { transition-delay: 0.20s; }
+      .stagger-grid.is-visible .loc-card:nth-child(5) { transition-delay: 0.25s; }
+      .stagger-grid.is-visible .loc-card:nth-child(6) { transition-delay: 0.30s; }
+      .stagger-grid.is-visible .loc-card:nth-child(7) { transition-delay: 0.35s; }
+      .stagger-grid.is-visible .loc-card:nth-child(8) { transition-delay: 0.40s; }
+      .stagger-grid.is-visible .loc-card:nth-child(9) { transition-delay: 0.45s; }
+      .stagger-grid.is-visible .loc-card:nth-child(10) { transition-delay: 0.50s; }
+      .stagger-grid.is-visible .loc-card:nth-child(11) { transition-delay: 0.55s; }
+      .stagger-grid.is-visible .loc-card:nth-child(12) { transition-delay: 0.60s; }
     </style>
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
@@ -335,6 +403,114 @@
         </div>
       </section>
 
+      <!-- Nearby Locations -->
+      <section class="container mx-auto px-6 max-w-7xl py-24 fade-in-section">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-brand-text mb-4">Nearby Landmarks</h2>
+          <p class="text-brand-muted max-w-2xl mx-auto">Centrally located in DHA, giving you quick access to the city's best shopping, dining, and healthcare.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-grid">
+          
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🛍️</div>
+             <div class="p-5">
+               <h3 class="loc-title">Dolmen Mall Clifton</h3>
+               <p class="loc-tag">Shopping & Cinema</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🌊</div>
+             <div class="p-5">
+               <h3 class="loc-title">Sea View Beach</h3>
+               <p class="loc-tag">Leisure</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍽️</div>
+             <div class="p-5">
+               <h3 class="loc-title">Clock Tower Restaurant</h3>
+               <p class="loc-tag">Fine Dining</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🥘</div>
+             <div class="p-5">
+               <h3 class="loc-title">Chaupal Seaview</h3>
+               <p class="loc-tag">Buffet Dining</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍔</div>
+             <div class="p-5">
+               <h3 class="loc-title">McDonald's Clifton</h3>
+               <p class="loc-tag">Fast Food</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍗</div>
+             <div class="p-5">
+               <h3 class="loc-title">KFC Clifton</h3>
+               <p class="loc-tag">Fast Food</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🍢</div>
+             <div class="p-5">
+               <h3 class="loc-title">Kolachi Do Derya</h3>
+               <p class="loc-tag">Seaside Dining</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🌶️</div>
+             <div class="p-5">
+               <h3 class="loc-title">Dasnumberi</h3>
+               <p class="loc-tag">Local Cuisine</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">💪</div>
+             <div class="p-5">
+               <h3 class="loc-title">Trifit Gym</h3>
+               <p class="loc-tag">Fitness Club</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🏥</div>
+             <div class="p-5">
+               <h3 class="loc-title">Ziauddin Hospital</h3>
+               <p class="loc-tag">Clifton Campus</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🩺</div>
+             <div class="p-5">
+               <h3 class="loc-title">South City Hospital</h3>
+               <p class="loc-tag">Healthcare</p>
+             </div>
+          </article>
+
+          <article class="loc-card group" tabindex="0">
+             <div class="loc-media">🚑</div>
+             <div class="p-5">
+               <h3 class="loc-title">OMI Hospital</h3>
+               <p class="loc-tag">DHA Branch</p>
+             </div>
+          </article>
+
+        </div>
+      </section>
+
       <!-- CTA Band -->
       <section class="container mx-auto px-6 max-w-5xl py-20 fade-in-section">
         <div class="bg-gradient-to-r from-brand-accent to-teal-600 rounded-2xl p-10 text-center shadow-2xl relative overflow-hidden group">
@@ -436,10 +612,12 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
         });
       }, {threshold: 0.1});
-      document.querySelectorAll('.fade-in-section').forEach(el => observer.observe(el));
+      document.querySelectorAll('.fade-in-section, .stagger-grid').forEach(el => observer.observe(el));
     </script>
   </body>
 </html>
