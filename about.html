@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | Beach View Stays - Premium DHA Karachi Apartments</title>
-    <meta name="description" content="Learn about BeachViewStays.pk. We offer multiple exclusive, fully serviced 1-bedroom apartments in DHA Karachi. Ideal for families, tourists, and corporate stays." />
+    <meta name="description" content="Learn about Beach View Stays. We offer multiple exclusive, fully serviced 1-bedroom apartments in DHA Karachi. Ideal for families, tourists, and corporate stays." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://beachviewstays.pk/about" />
     
@@ -12,7 +12,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://beachviewstays.pk/about" />
     <meta property="og:title" content="About Beach View Stays | Premium Serviced Living" />
-    <meta property="og:description" content="Discover our 5 exclusive units in DHA Karachi. Secure, hygienic, and fully furnished." />
+    <meta property="og:description" content="Discover our multiple exclusive units in DHA Karachi. Secure, hygienic, and fully furnished." />
     <meta property="og:image" content="https://beachviewstays.pk/assets/hero-1.jpg" />
 
     <!-- Twitter -->
@@ -28,7 +28,7 @@
         "@type": "AboutPage",
         "mainEntity": {
             "@type": "LodgingBusiness",
-            "name": "BeachViewStays.pk",
+            "name": "Beach View Stays",
             "url": "https://beachviewstays.pk/",
             "telephone": "+923068230101",
             "email": "karachi.apartments@gmail.com",
@@ -38,23 +38,22 @@
             "addressRegion": "Karachi",
             "addressCountry": "PK"
             },
-            "numberOfRooms": multiple,
+            "numberOfRooms": 5,
             "priceRange": "$$"
         }
       }
     </script>
     
+    <!-- Theme Script: Default to Light -->
     <script>
       (function() {
         try {
-          const savedTheme = localStorage.getItem('theme');
-          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-            document.documentElement.dataset.theme = 'dark';
-          } else {
-            document.documentElement.dataset.theme = 'light';
-          }
-        } catch (e) {}
+          var savedTheme = localStorage.getItem('theme');
+          var theme = savedTheme === 'dark' ? 'dark' : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
       })();
     </script>
 
@@ -119,18 +118,36 @@
         opacity: 1;
         transform: none;
       }
+
+      /* Premium Card Hover Effect */
+      .feature-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(var(--accent), 0.5);
+        box-shadow: 0 20px 40px -10px rgba(var(--accent), 0.15);
+      }
+      .feature-card .icon-wrapper {
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+      }
+      .feature-card:hover .icon-wrapper {
+        background-color: rgb(var(--accent));
+        color: white;
+        transform: scale(1.1) rotate(3deg);
+      }
     </style>
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
 
-    <!-- Header -->
+  <!-- Navbar -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent py-5">
       <div class="container mx-auto px-6 max-w-7xl flex items-center justify-between">
         
-         <!-- Premium Logo -->
-         <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
-            <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
-            <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
+        <!-- Premium Logo -->
+        <a href="index.html" class="text-2xl md:text-3xl leading-none group flex items-baseline gap-1">
+          <span class="logo-text text-brand-text group-hover:opacity-90 transition-opacity">BeachView</span>
+          <span class="logo-accent group-hover:translate-x-1 transition-transform duration-300">Stays</span>
         </a>
 
         <!-- Desktop Nav -->
@@ -171,100 +188,127 @@
       </div>
     </header>
 
-    <main class="flex-grow pt-24 pb-12">
+    <main class="flex-grow">
       
-      <!-- Hero Section -->
-      <section class="container mx-auto px-6 max-w-7xl mb-20 fade-in-section">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-7">
-            <span class="inline-block px-3 py-1 mb-6 text-xs font-bold tracking-wider text-brand-accent uppercase border border-brand-accent/30 rounded-full bg-brand-accent/5">About Us</span>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-brand-text mb-6">
-              Serviced Living <br />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-blue-500">Near The Coast</span>
-            </h1>
-            <p class="text-lg text-brand-muted leading-relaxed max-w-2xl border-l-4 border-brand-border pl-6">
-              BeachView<span class="font-serif italic text-brand-accent">Stays</span> offers a premium alternative to traditional hotels in DHA Karachi. We operate multiple exclusive, one-bedroom apartment units designed for travelers who value privacy, hygiene, and the comfort of a home.
-            </p>
-          </div>
-          
-          <!-- Cards -->
-          <div class="lg:col-span-5">
-            <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 shadow-2xl relative overflow-hidden group">
-              <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl group-hover:bg-brand-accent/20 transition-colors"></div>
-              <h3 class="text-xl font-bold text-brand-text mb-6">At a Glance</h3>
-              <ul class="space-y-4">
-                <li class="flex items-center gap-3 text-brand-muted">
-                  <span class="w-8 h-8 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-sm">🏢</span>
-                  <span class="font-medium">Multiple Exclusive Units</span>
-                </li>
-                <li class="flex items-center gap-3 text-brand-muted">
-                  <span class="w-8 h-8 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-sm">👨‍👩‍👧</span>
-                  <span class="font-medium">Family & Tourist Friendly</span>
-                </li>
-                <li class="flex items-center gap-3 text-brand-muted">
-                  <span class="w-8 h-8 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-sm">✨</span>
-                  <span class="font-medium">Spotless Hygiene</span>
-                </li>
-                <li class="flex items-center gap-3 text-brand-muted">
-                  <span class="w-8 h-8 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-sm">🛡️</span>
-                  <span class="font-medium">Secure & Peaceful</span>
-                </li>
-              </ul>
+      <!-- Page Header -->
+      <section class="relative bg-brand-dark py-24 md:py-32 mb-12 flex items-center justify-center">
+        <div class="absolute inset-0 overflow-hidden">
+          <img src="/assets/hero-3.jpg" class="w-full h-full object-cover opacity-50" alt="Beach View Atmosphere" />
+          <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/90 via-brand-dark/50 to-brand-surface"></div>
+        </div>
+        <div class="container mx-auto px-6 max-w-7xl relative z-10 text-center fade-in-section">
+          <span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-brand-accent uppercase border border-brand-accent/50 rounded-full bg-brand-accent/10 backdrop-blur-md">About Us</span>
+          <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-sm">
+            Serviced Living <span class="text-brand-accent">Reimagined</span>
+          </h1>
+          <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto font-medium leading-relaxed">
+            Beach View <span class="font-serif italic text-brand-accent">Stays</span> offers a premium alternative to traditional hotels in DHA Karachi. Exclusive, hygienic, and designed for your privacy.
+          </p>
+        </div>
+      </section>
+
+      <!-- At a Glance Section -->
+      <section class="container mx-auto px-6 max-w-7xl mb-24 fade-in-section -mt-10 relative z-20">
+        <div class="bg-brand-surface border border-brand-border rounded-2xl p-8 shadow-2xl relative overflow-hidden group max-w-4xl mx-auto">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-3xl group-hover:bg-brand-accent/10 transition-colors pointer-events-none"></div>
+          <h3 class="text-2xl font-bold text-brand-text mb-8 text-center border-b border-brand-border pb-4">Our Core Values</h3>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="flex flex-col items-center text-center">
+              <span class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-xl mb-3 shadow-md">🏢</span>
+              <span class="font-bold text-brand-text">Exclusive Units</span>
+              <span class="text-xs text-brand-muted mt-1">Private 1-Bed Apartments</span>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <span class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-xl mb-3 shadow-md">👨‍👩‍👧</span>
+              <span class="font-bold text-brand-text">Family Friendly</span>
+              <span class="text-xs text-brand-muted mt-1">Safe & Secure Environment</span>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <span class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-xl mb-3 shadow-md">✨</span>
+              <span class="font-bold text-brand-text">Spotless Hygiene</span>
+              <span class="text-xs text-brand-muted mt-1">Daily Housekeeping Included</span>
+            </div>
+            <div class="flex flex-col items-center text-center">
+              <span class="w-12 h-12 rounded-full bg-brand-dark flex items-center justify-center text-brand-accent text-xl mb-3 shadow-md">🛡️</span>
+              <span class="font-bold text-brand-text">Corporate Ready</span>
+              <span class="text-xs text-brand-muted mt-1">Peaceful & Internet Ready</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- What We Offer -->
-      <section class="bg-brand-surface border-y border-brand-border py-20 fade-in-section">
+      <section class="bg-brand-surface border-y border-brand-border py-24 fade-in-section">
         <div class="container mx-auto px-6 max-w-7xl">
           <div class="text-center max-w-2xl mx-auto mb-16">
             <h2 class="text-3xl font-bold text-brand-text mb-4">What We Offer</h2>
             <p class="text-brand-muted">Every unit is fully furnished and equipped with premium amenities to ensure a hassle-free stay.</p>
           </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- Card 1 -->
-            <div class="p-6 rounded-xl bg-brand-dark/50 border border-brand-border hover:border-brand-accent/50 transition-all">
-              <h3 class="text-lg font-bold text-brand-text mb-2 flex items-center gap-2">
-                <span class="text-brand-accent">🛋️</span> Fully Furnished
-              </h3>
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                <span class="text-xl">🛋️</span>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Fully Furnished</h3>
               <p class="text-sm text-brand-muted">Elegant lounge area and comfortable bedroom setup.</p>
             </div>
             <!-- Card 2 -->
-            <div class="p-6 rounded-xl bg-brand-dark/50 border border-brand-border hover:border-brand-accent/50 transition-all">
-              <h3 class="text-lg font-bold text-brand-text mb-2 flex items-center gap-2">
-                <span class="text-brand-accent">❄️</span> Climate Control
-              </h3>
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                <span class="text-xl">❄️</span>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Climate Control</h3>
               <p class="text-sm text-brand-muted">Powerful Split ACs installed in every apartment.</p>
             </div>
             <!-- Card 3 -->
-            <div class="p-6 rounded-xl bg-brand-dark/50 border border-brand-border hover:border-brand-accent/50 transition-all">
-              <h3 class="text-lg font-bold text-brand-text mb-2 flex items-center gap-2">
-                <span class="text-brand-accent">📺</span> Smart Entertainment
-              </h3>
-              <p class="text-sm text-brand-muted">Smart TV with Netflix & YouTube connectivity.</p>
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                <span class="text-xl">📺</span>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Smart TV</h3>
+              <p class="text-sm text-brand-muted">Netflix & YouTube connectivity for entertainment.</p>
             </div>
             <!-- Card 4 -->
-            <div class="p-6 rounded-xl bg-brand-dark/50 border border-brand-border hover:border-brand-accent/50 transition-all">
-              <h3 class="text-lg font-bold text-brand-text mb-2 flex items-center gap-2">
-                <span class="text-brand-accent">🍳</span> Kitchenette
-              </h3>
-              <p class="text-sm text-brand-muted">Equipped with Fridge, Microwave, and Stove.</p>
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                <span class="text-xl">🍳</span>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Kitchenette</h3>
+              <p class="text-sm text-brand-muted">Fridge, Microwave, Stove, Kettle & Iron.</p>
             </div>
             <!-- Card 5 -->
-            <div class="p-6 rounded-xl bg-brand-dark/50 border border-brand-border hover:border-brand-accent/50 transition-all">
-              <h3 class="text-lg font-bold text-brand-text mb-2 flex items-center gap-2">
-                <span class="text-brand-accent">🚿</span> Attached Bath
-              </h3>
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                <span class="text-xl">🚿</span>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Attached Bath</h3>
               <p class="text-sm text-brand-muted">Modern fixtures with Electric Geyser for hot water.</p>
             </div>
             <!-- Card 6 -->
-            <div class="p-6 rounded-xl bg-brand-dark/50 border border-brand-border hover:border-brand-accent/50 transition-all">
-              <h3 class="text-lg font-bold text-brand-text mb-2 flex items-center gap-2">
-                <span class="text-brand-accent">💧</span> 24/7 Water
-              </h3>
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                <span class="text-xl">💧</span>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">24/7 Water</h3>
               <p class="text-sm text-brand-muted">Continuous supply of sweet water. No shortages.</p>
+            </div>
+            <!-- Card 7: Added per request -->
+            <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12h-3m3 0a3 3 0 11-6 0 3 3 0 016 0zm-9 0V7a3 3 0 013-3h3a3 3 0 013 3v5M3 13l2.82 5.08a2 2 0 001.75 1.03h8.86a2 2 0 001.75-1.03L21 13" /></svg>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Tea & Coffee</h3>
+              <p class="text-sm text-brand-muted">Electric kettle provided for your convenience.</p>
+            </div>
+             <!-- Card 8: Added per request -->
+             <div class="feature-card p-6 rounded-xl bg-brand-surface border border-brand-border">
+              <div class="icon-wrapper w-12 h-12 rounded-lg bg-brand-dark/50 text-brand-accent flex items-center justify-center mb-4">
+                 <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 19H5m14 0l-2-10a2 2 0 00-2-1.7h-7a2 2 0 00-2 1.7L6 19m13 0h2" /></svg>
+              </div>
+              <h3 class="text-lg font-bold text-brand-text mb-2">Iron & Board</h3>
+              <p class="text-sm text-brand-muted">Look your best for meetings or outings.</p>
             </div>
           </div>
         </div>
@@ -273,18 +317,18 @@
       <!-- Why Guests Prefer Us -->
       <section class="container mx-auto px-6 max-w-7xl py-20 fade-in-section">
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="text-center">
-            <div class="w-14 h-14 mx-auto bg-brand-surface border border-brand-border rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg">📍</div>
+          <div class="text-center group">
+            <div class="w-16 h-16 mx-auto bg-brand-surface border border-brand-border rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">📍</div>
             <h3 class="text-xl font-bold text-brand-text mb-2">Prime DHA Location</h3>
             <p class="text-brand-muted text-sm px-4">Located in a secure, upscale neighborhood minutes away from Sea View and commercial hubs.</p>
           </div>
-          <div class="text-center">
-            <div class="w-14 h-14 mx-auto bg-brand-surface border border-brand-border rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg">🧹</div>
+          <div class="text-center group">
+            <div class="w-16 h-16 mx-auto bg-brand-surface border border-brand-border rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">🧹</div>
             <h3 class="text-xl font-bold text-brand-text mb-2">Immaculate Hygiene</h3>
             <p class="text-brand-muted text-sm px-4">We don't compromise on cleanliness. Professional housekeeping ensures a spotless environment daily.</p>
           </div>
-          <div class="text-center">
-            <div class="w-14 h-14 mx-auto bg-brand-surface border border-brand-border rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg">🛡️</div>
+          <div class="text-center group">
+            <div class="w-16 h-16 mx-auto bg-brand-surface border border-brand-border rounded-full flex items-center justify-center text-2xl mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300">🛡️</div>
             <h3 class="text-xl font-bold text-brand-text mb-2">Privacy & Security</h3>
             <p class="text-brand-muted text-sm px-4">A peaceful retreat for families and tourists. We maintain a strict secure environment.</p>
           </div>
@@ -293,8 +337,8 @@
 
       <!-- CTA Band -->
       <section class="container mx-auto px-6 max-w-5xl py-20 fade-in-section">
-        <div class="bg-gradient-to-r from-brand-accent to-teal-600 rounded-2xl p-10 text-center shadow-2xl relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-full bg-white/10 opacity-30"></div>
+        <div class="bg-gradient-to-r from-brand-accent to-teal-600 rounded-2xl p-10 text-center shadow-2xl relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIvPjwvc3ZnPg==')] opacity-30"></div>
           <h2 class="text-3xl font-bold text-white mb-4 relative z-10">Plan Your Visit Today</h2>
           <p class="text-teal-50 mb-8 relative z-10">Experience the best of DHA Karachi with Beach View Stays.</p>
           <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
@@ -316,7 +360,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
             <a href="index.html" class="text-2xl font-bold tracking-tight text-brand-text block mb-4">
-              BeachView<span class="logo-accent">Stays</span>
+              Beach View<span class="logo-accent">Stays</span>
             </a>
             <p class="text-brand-muted text-sm mb-4">
               Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
@@ -344,7 +388,7 @@
           </div>
         </div>
         <div class="border-t border-brand-border pt-8 text-center md:text-left">
-          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> BeachViewStays.pk. All rights reserved.</p>
+          <p class="text-brand-muted text-xs">&copy; <span id="year"></span> Beach View Stays. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -357,9 +401,9 @@
       const overlay = document.getElementById('mobile-menu-overlay');
       const themeToggles = [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')];
       
-      let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
-      const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
+      let theme = localStorage.getItem('theme') || 'light';
+      const sunIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>';
+      const moonIcon = '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>';
 
       function updateTheme() {
         document.documentElement.dataset.theme = theme;
