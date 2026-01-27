@@ -1,89 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery | Beach View Stays - Luxury Apartment Tour</title>
-    <meta name="description" content="Explore our premium 1-bedroom serviced apartments in DHA Karachi. View bedrooms, lounges, kitchens, and amenities. Book your stay today." />
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://beachviewstays.pk/gallery" />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://beachviewstays.pk/gallery" />
-    <meta property="og:title" content="Gallery | Beach View Stays" />
-    <meta property="og:description" content="Visual tour of our premium serviced apartments near the beach in DHA Karachi." />
-    <meta property="og:image" content="https://beachviewstays.pk/assets/hero-2.jpg" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gallery | Beach View Stays" />
-    <meta name="twitter:description" content="Visual tour of our premium serviced apartments near the beach in DHA Karachi." />
-    <meta name="twitter:image" content="https://beachviewstays.pk/assets/hero-2.jpg" />
+  <title>Gallery | Serviced Apartments DHA Karachi (Photos)</title>
+  <meta name="description" content="Gallery of Beach View Stays in DHA Karachi: premium 1-bedroom serviced apartments with bedroom, lounge, kitchenette, bathroom, and amenities. Near Sea View." />
+  <meta name="keywords" content="Beach View Stays gallery, serviced apartment photos DHA Karachi, furnished 1 bedroom apartment images, apartment near Sea View pictures, DHA Karachi apartment interior, serviced apartment bedroom Karachi, kitchenette apartment DHA, clean apartment Karachi photos" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
+  <link rel="canonical" href="https://beachviewstays.pk/gallery" />
+  <meta http-equiv="content-language" content="en-PK" />
+  <link rel="alternate" hreflang="en-pk" href="https://beachviewstays.pk/gallery" />
+  <link rel="alternate" hreflang="x-default" href="https://beachviewstays.pk/gallery" />
+
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0d9488" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Beach View Stays" />
+  <meta property="og:locale" content="en_PK" />
+  <meta property="og:url" content="https://beachviewstays.pk/gallery" />
+  <meta property="og:title" content="Gallery | Beach View Stays (DHA Karachi)" />
+  <meta property="og:description" content="Photos of our premium 1-bedroom serviced apartments in DHA Karachi near Sea View." />
+  <meta property="og:image" content="https://beachviewstays.pk/assets/hero-2.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gallery | Beach View Stays (DHA Karachi)" />
+  <meta name="twitter:description" content="Visual tour: bedroom, lounge, kitchenette, bathroom, and amenities. Near Sea View." />
+  <meta name="twitter:image" content="https://beachviewstays.pk/assets/hero-2.jpg" />
+  <meta name="twitter:url" content="https://beachviewstays.pk/gallery" />
+
+  <link rel="preload" as="image" href="/assets/hero-2.jpg" fetchpriority="high" />
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        "@context": "https://schema.org",
-        "@type": "ImageGallery",
-        "name": "Beach View Stays Apartment Gallery",
-        "description": "Photos of bedrooms, lounges, kitchens and bathrooms.",
+        "@type": "WebPage",
+        "@id": "https://beachviewstays.pk/gallery#webpage",
         "url": "https://beachviewstays.pk/gallery",
-        "mainEntity": {
-             "@type": "LodgingBusiness",
-             "name": "Beach View Stays",
-             "url": "https://beachviewstays.pk/"
+        "name": "Gallery | Beach View Stays",
+        "description": "Gallery of Beach View Stays serviced apartments in DHA Karachi near Sea View."
+      },
+      {
+        "@type": "ImageGallery",
+        "@id": "https://beachviewstays.pk/gallery#gallery",
+        "name": "Beach View Stays Apartment Gallery",
+        "url": "https://beachviewstays.pk/gallery",
+        "description": "Photos of bedrooms, lounge, kitchenette, bathroom, and amenities.",
+        "isPartOf": { "@id": "https://beachviewstays.pk/gallery#webpage" },
+        "about": { "@id": "https://beachviewstays.pk/#lodging" }
+      },
+      {
+        "@type": "LodgingBusiness",
+        "@id": "https://beachviewstays.pk/#lodging",
+        "name": "Beach View Stays",
+        "url": "https://beachviewstays.pk/",
+        "telephone": "+923243490260",
+        "email": "beachviewstays@gmail.com",
+        "numberOfRooms": 5,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "DHA",
+          "addressRegion": "Karachi",
+          "addressCountry": "PK"
         }
       }
-    </script>
-    
-    <!-- Theme Script: Default to Light -->
-    <script>
-      (function() {
-        try {
-          var savedTheme = localStorage.getItem('theme');
-          var theme = savedTheme === 'dark' ? 'dark' : 'light';
-          document.documentElement.dataset.theme = theme;
-        } catch (e) {
-          document.documentElement.dataset.theme = 'light';
-        }
-      })();
-    </script>
+    ]
+  }
+  </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: ['class', '[data-theme="dark"]'],
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                dark: 'rgb(var(--bg-main) / <alpha-value>)',       
-                surface: 'rgb(var(--bg-surface) / <alpha-value>)',
-                border: 'rgb(var(--border) / <alpha-value>)',
-                text: 'rgb(var(--text-main) / <alpha-value>)',
-                muted: 'rgb(var(--text-muted) / <alpha-value>)',
-                accent: 'rgb(var(--accent) / <alpha-value>)',
-                highlight: 'rgb(var(--highlight) / <alpha-value>)',
-              }
-            },
-            fontFamily: {
-              sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
-              serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(10px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              }
+  <!-- Theme Script: Default to Light -->
+  <script>
+    (function() {
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var theme = savedTheme === 'dark' ? 'dark' : 'light';
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: 'rgb(var(--bg-main) / <alpha-value>)',
+              surface: 'rgb(var(--bg-surface) / <alpha-value>)',
+              border: 'rgb(var(--border) / <alpha-value>)',
+              text: 'rgb(var(--text-main) / <alpha-value>)',
+              muted: 'rgb(var(--text-muted) / <alpha-value>)',
+              accent: 'rgb(var(--accent) / <alpha-value>)',
+              highlight: 'rgb(var(--highlight) / <alpha-value>)'
+            }
+          },
+          fontFamily: {
+            sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif']
+          },
+          animation: { 'fade-in-up': 'fadeInUp 0.5s ease-out forwards' },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
             }
           }
         }
       }
-    </script>
+    }
+  </script>
     <style>
       :root {
         --bg-main: 248 250 252;
