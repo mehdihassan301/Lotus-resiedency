@@ -1,31 +1,41 @@
 {
-  "version": 2,
-  "builds": [{ "src": "**/*", "use": "@vercel/static" }],
-
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/about.html", "destination": "/about", "permanent": true },
-    { "source": "/gallery.html", "destination": "/gallery", "permanent": true },
-    { "source": "/facilities.html", "destination": "/facilities", "permanent": true },
-    { "source": "/contact.html", "destination": "/contact", "permanent": true }
+    {
+      "source": "http://beachviewstays.pk/:path*",
+      "destination": "https://beachviewstays.pk/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://www.beachviewstays.pk/:path*",
+      "destination": "https://beachviewstays.pk/:path*",
+      "permanent": true
+    }
   ],
-
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/gallery", "destination": "/gallery.html" },
-    { "source": "/facilities", "destination": "/facilities.html" },
-    { "source": "/contact", "destination": "/contact.html" }
-  ],
-
   "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     }
   ]
