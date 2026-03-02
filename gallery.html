@@ -171,6 +171,15 @@
       .gallery-grid-wrapper {
         min-height: 500px;
       }
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
     </style>
   </head>
   <body class="bg-brand-dark text-brand-text antialiased selection:bg-brand-accent selection:text-brand-dark flex flex-col min-h-screen">
@@ -238,13 +247,14 @@
 
       <!-- Filters -->
       <section class="container mx-auto px-6 max-w-7xl mb-12 fade-in-section">
-        <div class="flex flex-wrap justify-center gap-3" id="filters">
-          <button class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold border transition-all bg-brand-accent text-white border-brand-accent" data-filter="all">All</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="bedroom">Bedroom</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="lounge">Lounge</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="kitchen">Kitchen</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="bath">Bath</button>
-          <button class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent" data-filter="amenities">Amenities</button>
+        <div class="flex overflow-x-auto md:flex-wrap md:justify-center gap-3 pb-2 md:pb-0 no-scrollbar snap-x px-1" id="filters">
+          <button class="filter-btn active shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border transition-all bg-brand-accent text-white border-brand-accent whitespace-nowrap" data-filter="all">All</button>
+          <button class="filter-btn shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent whitespace-nowrap" data-filter="bedroom">Bedroom</button>
+          <button class="filter-btn shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent whitespace-nowrap" data-filter="2bed">2-Bedrooms</button>
+          <button class="filter-btn shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent whitespace-nowrap" data-filter="lounge">Lounge</button>
+          <button class="filter-btn shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent whitespace-nowrap" data-filter="kitchen">Kitchen</button>
+          <button class="filter-btn shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent whitespace-nowrap" data-filter="bath">Bath</button>
+          <button class="filter-btn shrink-0 snap-center px-5 py-2.5 rounded-full text-sm font-semibold border border-brand-border text-brand-muted hover:border-brand-accent hover:text-brand-accent transition-all bg-transparent whitespace-nowrap" data-filter="amenities">Amenities</button>
         </div>
       </section>
 
@@ -357,7 +367,7 @@
             </div>
           </div>
 
-          <!-- Image 15: Amenities (Was Vicinity - Parking) -->
+          <!-- Image 15: Amenities  -->
           <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md aspect-[4/3]" data-category="amenities" tabindex="0">
             <img src="/assets/vicinity-3.jpg" alt="Designated Parking Spot" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
@@ -373,7 +383,7 @@
             </div>
           </div>
 
-          <!-- Image 17: Amenities (Was Vicinity - Evening) -->
+          <!-- Image 17: Amenities -->
           <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md aspect-[4/3]" data-category="amenities" tabindex="0">
             <img src="/assets/facilities.jpg" alt="Building Evening View" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
@@ -413,6 +423,30 @@
             </div>
           </div>
 
+          <!-- Image 22: 2-Bed Master -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md aspect-[4/3]" data-category="2bed" tabindex="0">
+            <img src="/assets/br-20.jpg" alt="Executive 2-Bed Master Suite" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium drop-shadow-md">2 BR Suite</p>
+            </div>
+          </div>
+
+          <!-- Image 23: 2-Bed Twin -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md aspect-[4/3]" data-category="2bed" tabindex="0">
+            <img src="/assets/br-21.jpg" alt="Executive 2-Bed Twin Room" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium drop-shadow-md">Twin Guest Room</p>
+            </div>
+          </div>
+
+          <!-- Image 24: 2-Bed Lounge -->
+          <div class="gallery-item group relative cursor-pointer overflow-hidden rounded-xl border border-brand-border bg-brand-surface shadow-md aspect-[4/3]" data-category="2bed" tabindex="0">
+            <img src="/assets/br-22.jpg" alt="Executive 2-Bed Living Area" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-end p-6">
+              <p class="text-white font-medium drop-shadow-md">2 BR Suite</p>
+            </div>
+          </div>
+
         </div>
 
         <div id="no-results" class="hidden flex-col items-center justify-center py-20 text-center">
@@ -448,7 +482,7 @@
               Beach View <span class="logo-accent">Stays</span>
             </a>
             <p class="text-brand-muted text-sm mb-4">
-              Premium 1-bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
+              Premium bedroom serviced apartments in DHA Karachi. The perfect blend of luxury and home comfort.
             </p>
             <p class="text-brand-muted text-sm">
               <span class="block text-brand-text text-xs uppercase font-bold tracking-wider mb-1">Email</span>
